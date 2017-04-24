@@ -20,6 +20,14 @@ app.use(WebpackDevMiddleware(compiler, {
 
 app.use(WebpackHotMiddleware(compiler));
 
+// webpack插件，监听html文件改变事件
+compiler.plugin('compilation', function (compilation) {
+    compilation.plugin('html-webpack-plugin-after-emit', function (data, cb) {
+        // 发布事件
+        hotMiddleware.publish({ action: 'reload' })
+        cb()
+    })
+})
 
 app.listen(port,function(err){
     if(err){

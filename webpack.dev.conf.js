@@ -18,4 +18,12 @@ config.plugins = [
     })
 ];
 
+// 动态向入口配置中注入 webpack-hot-middleware/client
+// var devClient = 'webpack-hot-middleware/client';
+var devClient = './cilent';
+Object.keys(config.entry).forEach(function (name) {
+    var extras = [devClient]
+    config.entry[name] = extras.concat(config.entry[name])
+})
+
 module.exports = config;

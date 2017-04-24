@@ -4,7 +4,8 @@ var HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
   devtool:'eval-source-map',
-  entry:['webpack-hot-middleware/client', path.resolve(__dirname, './app/index/index.js')],
+  // entry:['webpack-hot-middleware/client', path.resolve(__dirname, './app/index/index.js')],
+  entry:{app:path.resolve(__dirname, './app/index/index.js')},
   output:{
     path: path.join(__dirname,"build"),
     // publicPath: '/',

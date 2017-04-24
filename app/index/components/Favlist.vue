@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div v-for="n in 10">{{msg}}456</div>
+        <div v-for="n in 10">{{msg}}4567</div>
     </div>
 </template>
 
@@ -8,7 +8,7 @@
     export default {
         data () {
             return {
-                msg: 'Hello World'
+                msg: 'Hello World bu wuzi'
             }
         }
     }
@@ -16,6 +16,6 @@
 
 <style>
     html{
-        background: red;
+        background: green;
     }
 </style>
