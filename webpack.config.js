@@ -1,7 +1,7 @@
 var path = require('path')
 var webpack = require('webpack')
 var HtmlWebpackPlugin = require('html-webpack-plugin') 
-// var ExtractTextPlugin = require("extract-text-webpack-plugin")
+var ExtractTextPlugin = require("extract-text-webpack-plugin")
 
 module.exports = {
   devtool:'eval-source-map',
@@ -41,12 +41,12 @@ module.exports = {
           // }
     ] 
   },
-  // vue: {
-  //   loaders: {
-  //     css: ExtractTextPlugin.extract("css"),
-  //     less: ExtractTextPlugin.extract("css!less")
-  //   }
-  // },
+  vue: {
+    loaders: {
+      css: ExtractTextPlugin.extract("css"),
+      less: ExtractTextPlugin.extract("css!less")
+    }
+  },
   plugins:[
     new webpack.ProvidePlugin({ //页面可使用下列jquery属性
         $ : "jquery",
@@ -66,6 +66,6 @@ module.exports = {
             warnings: false
         }
     }), 
-    // new ExtractTextPlugin("[name].css"),	//单独使用style标签加载css并设置其路径
+    new ExtractTextPlugin("[name].css"),	//单独使用style标签加载css并设置其路径
   ]
 }
