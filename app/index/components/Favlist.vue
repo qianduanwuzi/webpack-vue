@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div v-for="n in 10">{{msg}}4567</div>
+        <div v-for="n in 10">{{msg}}</div>
     </div>
 </template>
 
@@ -8,9 +8,15 @@
     export default {
         data () {
             return {
-                msg: 'Hello World bu wuzi'
+                initmsg: 'Hello World bu wuzi'
             }
-        }
+        },
+        computed:{
+            msg: function(){
+                return this.initmsg.split('').reverse().join('');
+            }
+        },
+
     }
 </script>
 
