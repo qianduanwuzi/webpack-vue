@@ -6,20 +6,20 @@ var ExtractTextPlugin = require("extract-text-webpack-plugin")
 module.exports = {
   devtool:'eval-source-map',
   // entry:['webpack-hot-middleware/client', path.resolve(__dirname, './app/index/index.js')],
-  entry:{app:path.resolve(__dirname, './app/index/index.js'),
+  entry:{
+        app:[path.resolve(__dirname, './app/index/index.js')],
         vendor:["jquery"],  // 第三方只引入jq
-        },
+  },
   output:{
     path: path.join(__dirname,"build"),
-    // publicPath: '/',
-    filename: '[name].[hash].js',
-    chunkFilename: '[id].[chunkhash].js'
+    filename: '/js/[name].[hash].js',
+    chunkFilename: '/js/[id].[chunkhash].js'
   },
   resolve: { //当webpack试图去加载模块的时候，它默认是查找以 .js 结尾的文件的，它并不知道 .vue 结尾的文件是什么鬼玩意儿，所以我们要在配置文件中告诉webpack，遇到 .vue 结尾的也要去加载，
     extensions: ['', '.js', '.vue'],
     // root: path.resolve("./app"), //处理根目录
     alias: {
-
+      'vue': 'vue/dist/vue.js'
     }
   },
   module:{
@@ -66,6 +66,6 @@ module.exports = {
             warnings: false
         }
     }), 
-    new ExtractTextPlugin("[name].css"),	//单独使用style标签加载css并设置其路径
+    new ExtractTextPlugin("/css/[name].css"),	//单独使用style标签加载css并设置其路径
   ]
 }
