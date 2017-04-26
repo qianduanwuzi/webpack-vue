@@ -20,7 +20,7 @@ app.use(express.static(path.join(__dirname, 'build')));
 app.use(WebpackDevMiddleware(compiler, {
 //   publicPath: config.output.publicPath,
 //   noInfo: true,
-  stats: { colors: true }
+  stats: { colors: true, chunks:false}
 }));
 
 app.use(WebpackHotMiddleware(compiler));

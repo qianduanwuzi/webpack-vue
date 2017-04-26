@@ -1,10 +1,9 @@
 <template>
-  <div id="app">
-    <div class="nav">
+  <div class="container">
+    <!--<div class="nav">-->
         <leftsiderbar></leftsiderbar>
-        111234
         <!--<router-link to="/second">Go to second</router-link>-->
-    </div>
+    <!--</div>-->
      <div class="main">
      <!-- 路由匹配到的组件将渲染在这里 -->
        <router-view></router-view>
@@ -24,5 +23,15 @@ export default {
 
 
 <style>
-
+    .container{
+        position: relative;
+        height: 960px;
+        overflow: hidden;
+        font-family: "Microsoft YaHei";
+    }
+    .main{
+        position: absolute;
+        left: 160px;
+        top: 0px;
+    }
 </style>

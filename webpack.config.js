@@ -37,10 +37,10 @@ module.exports = {
             exclude: /node_modules/ //忽略此文件夹，加快编译速度
           },
 
-          // {
-          //   test: /\.css?$/,
-          //   loader: ExtractTextPlugin.extract("vue-style-loader", "css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]") // 处理css
-          // }
+          {
+            test: /\.css?$/,
+            loader: ExtractTextPlugin.extract("vue-style-loader", "css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]") // 处理css
+          }
     ] 
   },
   vue: {
