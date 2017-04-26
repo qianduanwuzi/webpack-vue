@@ -2,6 +2,7 @@ var path = require('path')
 var webpack = require('webpack')
 var HtmlWebpackPlugin = require('html-webpack-plugin') 
 var ExtractTextPlugin = require("extract-text-webpack-plugin")
+var hotMiddlewareScript = 'webpack-hot-middleware/client?reload=true';
 
 module.exports = {
   devtool:'eval-source-map',
@@ -12,6 +13,7 @@ module.exports = {
   },
   output:{
     path: path.join(__dirname,"build"),
+    // publicPath: 'http://localhost:8888/',
     filename: '/js/[name].[hash].js',
     chunkFilename: '/js/[id].[chunkhash].js'
   },
@@ -66,6 +68,8 @@ module.exports = {
             warnings: false
         }
     }), 
+     new webpack.optimize.OccurenceOrderPlugin(),
+     new webpack.HotModuleReplacementPlugin(),
     new ExtractTextPlugin("/css/[name].css"),	//单独使用style标签加载css并设置其路径
   ]
 }

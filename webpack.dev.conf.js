@@ -10,7 +10,6 @@ config.plugins = [
     //hot 添加三个插件
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin(),
     new HtmlWebpackPlugin({
         filename: 'app/index/index.html',
         template: './app/index/index.html',

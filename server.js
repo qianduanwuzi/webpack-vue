@@ -6,6 +6,8 @@ var path = require('path')
 var WebpackDevMiddleware = require('webpack-dev-middleware')
 var WebpackHotMiddleware = require('webpack-hot-middleware')
 var port = 8888
+var reload = require('reload');
+var http = require('http');
 
 //创建一个express实例
 var app = express()
@@ -16,8 +18,9 @@ var compiler = webpack(config)
 app.use(express.static(path.join(__dirname, 'build')));
 // 使用并注册WebpackDevMiddleware中间件
 app.use(WebpackDevMiddleware(compiler, {
-  publicPath: config.output.publicPath,
-  stats: { colors: true , chunks: false }
+//   publicPath: config.output.publicPath,
+//   noInfo: true,
+  stats: { colors: true }
 }));
 
 app.use(WebpackHotMiddleware(compiler));
@@ -43,5 +46,11 @@ app.listen(port,function(err){
     }
     console.log('listening at http://localhost:' + port )
 })
+
+// var server = http.createServer(app);
+// reload(server, app);
+// server.listen(port, function(){
+//     console.log('App (dev) is now running on port 8888!');
+// });
 
 

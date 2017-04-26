@@ -1,0 +1,24 @@
+<template>
+  <div>
+      项目经验
+     <!-- 路由匹配到的组件将渲染在这里 -->
+       <router-view></router-view>
+  </div>
+</template>
+
+<script>
+export default {
+  data () {
+    return {
+    }
+  },
+  computed:{
+  },
+  components: {
+  }
+}
+</script>
+
+<style>
+
+</style>
