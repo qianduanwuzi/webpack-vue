@@ -1,32 +1,38 @@
 module.exports = [
     {
         name:'个人信息',
-        // iconname:'icon-gerenxinxi',
+        iconname:'icon-mine',
+        show:true,
         url:'/personalmes',
     },
     {
         name:'项目经验',
-        // iconname:'icon-xiangmujingyan',
+        iconname:'icon-createtask',
+        show:false,
         url:'/projectexp',
     },
     {
         name:'预留1',
-        iconname:'icon-good',
+        iconname:'icon-other',
+        show:false,
         url:'/reserve1',
     },
     {
         name:'预留2',
-        iconname:'icon-home',
+        iconname:'icon-other',
+        show:false,
         url:'/reserve2',
     },
     {
         name:'预留3',
-        iconname:'icon-home',
+        iconname:'icon-other',
+        show:false,
         url:'/reserve3',
     },
     {
         name:'预留4',
-        iconname:'icon-tip',
+        iconname:'icon-other',
+        show:false,
         url:'/reserve4',
     },
 ]

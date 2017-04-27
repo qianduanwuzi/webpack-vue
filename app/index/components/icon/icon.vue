@@ -1,5 +1,5 @@
 <template>
-    <span>
+    <span style="display: inline-block">
         <span :class='[iconCss.iconfont, iconCss[iconname]]'></span>
     </span>
 </template>
