@@ -2,7 +2,6 @@ var path = require('path')
 var webpack = require('webpack')
 var HtmlWebpackPlugin = require('html-webpack-plugin') 
 var ExtractTextPlugin = require("extract-text-webpack-plugin")
-var hotMiddlewareScript = 'webpack-hot-middleware/client?reload=true';
 
 module.exports = {
   devtool:'eval-source-map',
@@ -12,10 +11,11 @@ module.exports = {
         vendor:["jquery"],  // 第三方只引入jq
   },
   output:{
-    path: path.join(__dirname,"build"),
-    // publicPath: '/build/',
-    filename: '/js/[name].[hash].js',
-    chunkFilename: '/js/[id].[chunkhash].js'
+    path: path.join( __dirname,"build"),
+    // publicPath: '',
+    // filename: '/js/[name].[hash].js',
+    filename: '[name].js',
+    chunkFilename: '[name].[chunkhash].js'
   },
   resolve: { //当webpack试图去加载模块的时候，它默认是查找以 .js 结尾的文件的，它并不知道 .vue 结尾的文件是什么鬼玩意儿，所以我们要在配置文件中告诉webpack，遇到 .vue 结尾的也要去加载，
     extensions: ['', '.js', '.vue'],
@@ -70,6 +70,10 @@ module.exports = {
     }), 
      new webpack.optimize.OccurenceOrderPlugin(),
      new webpack.HotModuleReplacementPlugin(),
-    new ExtractTextPlugin("/css/[name].css"),	//单独使用style标签加载css并设置其路径
+     new ExtractTextPlugin("[name]-[chunkhash].css"),	//单独使用style标签加载css并设置其路径
+    //  new webpack.DefinePlugin({
+    //         'process.env.NODE_ENV': '"development"'
+    //     }),
+    //  new webpack.NoErrorsPlugin()
   ]
 }

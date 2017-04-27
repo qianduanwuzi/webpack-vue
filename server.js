@@ -53,25 +53,23 @@
 //     console.log('App (dev) is now running on port 8888!');
 // });
 
-var path = require("path");
-var webpack = require("webpack");
-var webpackDevServer = require("webpack-dev-server");
-var webpackCfg = require("./webpack.dev.conf.js");
+var config = require("./webpack.config.js");
+var webpack = require('webpack');
+var WebpackDevServer = require('webpack-dev-server');
 
-var compiler = webpack(webpackCfg);
+config.entry.app.unshift("webpack-dev-server/client?http://localhost:8888/");
 
-//init server
-var app = new webpackDevServer(compiler, {
-    //注意此处publicPath必填
-    publicPath: webpackCfg.output.publicPath
-});
-
-app.listen(8888, function (err) {
-    if (err) {
-        console.log(err);
+var compiler = webpack(config);
+var server = new WebpackDevServer(compiler, {
+    publicPath: config.output.publicPath,
+    noInfo: true,
+    hot: true,
+    stats: {
+        colors: true,
+        chunks:false
     }
 });
-
-console.log("listen at http://localhost:8888");
-
+server.listen(8888, function(){
+    console.log('listening at http://localhost:8888');
+});
 
