@@ -13,7 +13,7 @@ module.exports = {
   },
   output:{
     path: path.join(__dirname,"build"),
-    // publicPath: 'http://localhost:8888/',
+    // publicPath: '/build/',
     filename: '/js/[name].[hash].js',
     chunkFilename: '/js/[id].[chunkhash].js'
   },

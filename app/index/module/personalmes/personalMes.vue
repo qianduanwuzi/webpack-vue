@@ -1,6 +1,6 @@
 <template>
   <div>
-      个人信息
+      个人信
      <!-- 路由匹配到的组件将渲染在这里 -->
        <router-view></router-view>
   </div>
