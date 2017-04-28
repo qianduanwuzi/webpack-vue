@@ -62,11 +62,8 @@ config.entry.app.unshift("webpack-dev-server/client?http://localhost:8888/");
 var compiler = webpack(config);
 var server = new WebpackDevServer(compiler, {
     publicPath: config.output.publicPath,
-    noInfo: true,
-    hot: true,
     stats: {
         colors: true,
-        chunks:false
     }
 });
 server.listen(8888, function(){

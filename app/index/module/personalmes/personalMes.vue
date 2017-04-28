@@ -1,8 +1,8 @@
 <template>
   <div>
-      个人信息
-     <!-- 路由匹配到的组件将渲染在这里 -->
-       <router-view></router-view>
+      个人信x 
+      <div>123</div>
+    
   </div>
 </template>
 

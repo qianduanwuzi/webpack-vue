@@ -5,12 +5,12 @@
 .menusBox{    
     background: #F7F7F7;
     border-right: 1px solid #e5e5e5;
-    position: absolute;
+    /*position: absolute;
     top: 0;
-    bottom: 0;
+    bottom: 0;*/
     height: 100%;
-    left: 0;
-    width: 150px;
+    /*left: 0;*/
+    width: 100%;
     overflow: hidden;
     box-shadow: 1px 0 15px rgba(0, 0, 0, 0.07);
     opacity: 1;

@@ -24,6 +24,9 @@ module.exports = {
       'vue': 'vue/dist/vue.js'
     }
   },
+  externals: {
+    'AMap': 'AMap'
+  },
   module:{
     loaders:[
           //使用vue-loader 加载 .vue 结尾的文件
@@ -36,7 +39,10 @@ module.exports = {
             loader: 'babel?presets=es2015',
             exclude: /node_modules/ //忽略此文件夹，加快编译速度
           },
-
+          {
+            test: /\.json$/,
+            loader: 'json'
+          },
           {
             test: /\.css?$/,
             loader: ExtractTextPlugin.extract("vue-style-loader", "css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]") // 处理css

@@ -1,9 +1,8 @@
 <template>
   <div class="container">
-    <!--<div class="nav">-->
+    <div class="nav">
         <leftsiderbar></leftsiderbar>
-        <!--<router-link to="/second">Go to second</router-link>-->
-    <!--</div>-->
+    </div>
      <div class="main">
      <!-- 路由匹配到的组件将渲染在这里 -->
        <router-view></router-view>
@@ -11,10 +10,13 @@
   </div>
 </template>
 <script>
-// import Hello from './components/Hello'
 import leftsiderbar from '../../portal/leftSiderBar'
 export default {
 //   name: 'apps',
+  mounted: function(){
+      $('.container').css('height',(document.body.clientHeight + 'px'))
+      $('.main').css('height',(document.body.clientHeight + 'px'))
+  },
   components: {
     leftsiderbar,
   }
@@ -23,15 +25,22 @@ export default {
 
 
 <style>
+    .nav{
+        float: left;
+        width:10%;
+        height: 100%;
+    }
     .container{
-        position: relative;
-        height: 960px;
+        /*position: relative;*/
+        /*height: 960px;*/
         overflow: hidden;
         font-family: "Microsoft YaHei";
     }
     .main{
-        position: absolute;
-        left: 160px;
+        float: right;
+        width: 89.5%;
+        /*position: absolute;*/
         top: 0px;
+        background-color: #f7f7f7;
     }
 </style>

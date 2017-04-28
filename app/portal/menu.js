@@ -12,7 +12,7 @@ module.exports = [
         url:'/projectexp',
     },
     {
-        name:'预留1',
+        name:'高德地图',
         iconname:'icon-other',
         show:false,
         url:'/reserve1',

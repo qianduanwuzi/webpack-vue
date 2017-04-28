@@ -10,7 +10,7 @@
 export default {
     data() {
         return {
-        author: "微信公众号 jinkey-love",
+        author: "wuzi",
         articles: [],
         }
     }
