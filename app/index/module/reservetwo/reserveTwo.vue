@@ -1,8 +1,7 @@
 <template>
   <div>
-      预留2
-     <!-- 路由匹配到的组件将渲染在这里 -->
-       <router-view></router-view>
+      <!--研究回调函数-->
+      研究回调函数
   </div>
 </template>
 
@@ -13,6 +12,26 @@ export default {
     }
   },
   computed:{
+  },
+  mounted: function(){
+    this.test(this.haha())
+  },
+  methods:{
+    test: function(c){
+      //do something
+      console.log('1');
+      if(c) {
+        alert('come')
+        console.log('2');
+        c()
+      }
+    },
+    haha: function(){
+      console.log('3')
+    },
+    hehe: function(){
+      console.log('4');
+    }
   },
   components: {
   }

@@ -3,12 +3,13 @@
           <div id="container"></div>
           <div id="tip">
               <b>经纬度 116.396574, 39.992706 的地理编码结果:</b>
-              <span id="result"></span>
+              <span id="result">{{address}}</span>
           </div>
       </div>
 </template>
 
 <script>
+var Thenjs = require('thenjs');
 import JzezMap from './jzezMap'
 import css from './reserveone.css'
 export default {
@@ -17,14 +18,25 @@ export default {
               css,
               zuobiao:[116.396574,39.992706],
               id:'container',
-              zoom: 18,  
-              lnglatXY: [116.396574, 39.992706] //已知点坐标
+              zoom: 13,  
+              lnglatXY: [116.396574, 39.992706], //已知点坐标
+              address:''
         }
   },
   computed:{
   },
   mounted: function(){
-      new JzezMap(this.zuobiao,this.id,this.zoom).regeocoder();
+      let mp = new JzezMap(this.zuobiao,this.id,this.zoom);
+      console.log(mp)
+    //   Thenjs(() =>{
+    //                 mp.getAddress((a) => {this.address = a;})})
+    //                 .then(function(){console.log(mp);mp.setFitView()});
+    mp.getAddress((a) =>{
+        console.log(this)
+        this.address = a;
+    });
+    mp.setFitView()
+
   },
   methods:{
     //   clickHandler: function(){
