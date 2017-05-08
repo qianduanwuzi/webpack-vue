@@ -1,8 +1,6 @@
 <template>
   <div>
-      预留3
-     <!-- 路由匹配到的组件将渲染在这里 -->
-       <router-view></router-view>
+      call方法研究
   </div>
 </template>
 
@@ -13,6 +11,18 @@ export default {
     }
   },
   computed:{
+  },
+  mounted: function(){
+    this.one.call(this.two,1,2)
+  },
+  methods:{
+    one: function(a,b){
+      console.log(a-b)
+    },
+    two: function(a,b){
+      console.log(a+b)
+    },
+
   },
   components: {
   }

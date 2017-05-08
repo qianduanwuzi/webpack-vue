@@ -9,29 +9,32 @@
 export default {
   data () {
     return {
+      a:'abc',
+      b:[1,2,3]
     }
   },
   computed:{
   },
   mounted: function(){
-    this.test(this.haha())
+    this.test(this.haha)
+    // this.testone(1,2,3)
   },
   methods:{
-    test: function(c){
+    testone: function(a,b,c){
+      console.log(arguments)
+    },
+    test: function(cb){
       //do something
       console.log('1');
-      if(c) {
-        alert('come')
+      if(cb) {
         console.log('2');
-        c()
+        cb()
       }
+      console.log('4')
     },
     haha: function(){
       console.log('3')
     },
-    hehe: function(){
-      console.log('4');
-    }
   },
   components: {
   }

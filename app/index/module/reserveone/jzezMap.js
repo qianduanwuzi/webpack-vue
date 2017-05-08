@@ -5,7 +5,8 @@ function JzezMap(x,id,z,ra,ex){
     this.z = z;
     this.map = new AMap.Map(id,{
         resizeEnable: true,
-        zoom: z || 18  //地图显示的缩放级别，若center与level未赋值，地图初始化默认显示用户所在城市范围
+        zoom: z || 18,  //地图显示的缩放级别，若center与level未赋值，地图初始化默认显示用户所在城市范围
+        isHotspot: true //地图热点
     });
 
     this.geocoder = new AMap.Geocoder({
@@ -17,12 +18,41 @@ function JzezMap(x,id,z,ra,ex){
         map:this.map,
         position: x
     });
+
+    this.placeSearch = new AMap.PlaceSearch(); //构造地点查询类
+
+    this.infoWindow=new AMap.AdvancedInfoWindow({});
+
+    this.map.on('hotspotclick', (result) => {
+        this.placeSearch.getDetails(result.id, (status, result) => {
+            if (status === 'complete' && result.info === 'OK') {
+                this.placeSearch_CallBack(result);
+            }
+        });
+    });
+
+    this.placeSearch_CallBack = function(data){
+        var poiArr = data.poiList.pois;
+        var location = poiArr[0].location;
+        this.infoWindow.setContent(this.createContent(poiArr[0]));
+        this.infoWindow.open(this.map,location);
+    }
+
+    this.createContent = function(poi){
+        console.log(poi)
+        var s = [];
+        s.push('<div class="info-title">'+poi.name+'</div><div class="info-content">'+"地址：" + poi.address);
+        s.push("电话：" + poi.tel);
+        s.push("类型：" + poi.type);
+        s.push('<div>');
+        return s.join("<br>");
+    }
+
     return this
 }
 
 //获取地址
 JzezMap.prototype.getAddress = function(cb){
-    // var address
     return this.geocoder.getAddress(this.x, function(status, result) {
         var address;
          if (status === 'complete' && result.info === 'OK') {
