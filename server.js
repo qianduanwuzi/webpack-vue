@@ -57,7 +57,7 @@ var config = require("./webpack.config.js");
 var webpack = require('webpack');
 var WebpackDevServer = require('webpack-dev-server');
 
-config.entry.app.unshift("webpack-dev-server/client?http://localhost:8888/");
+config.entry.app.unshift("webpack-dev-server/client?http://localhost:9999/");
 
 var compiler = webpack(config);
 var server = new WebpackDevServer(compiler, {
@@ -66,7 +66,7 @@ var server = new WebpackDevServer(compiler, {
         colors: true,
     }
 });
-server.listen(8888, function(){
-    console.log('listening at http://localhost:8888');
+server.listen(9999, function(){
+    console.log('listening at http://localhost:9999');
 });
 

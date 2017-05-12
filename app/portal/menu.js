@@ -18,13 +18,13 @@ module.exports = [
         url:'/reserve1',
     },
     {
-        name:'预留2',
+        name:'回调函数',
         iconname:'icon-other',
         show:false,
         url:'/reserve2',
     },
     {
-        name:'预留3',
+        name:'call方法',
         iconname:'icon-other',
         show:false,
         url:'/reserve3',
@@ -34,5 +34,17 @@ module.exports = [
         iconname:'icon-other',
         show:false,
         url:'/reserve4',
+    },
+     {
+        name:'富文本',
+        iconname:'icon-other',
+        show:false,
+        url:'/reserve5',
+    },
+    {
+        name:'promise',
+        iconname:'icon-other',
+        show:false,
+        url:'/reserve6',
     },
 ]

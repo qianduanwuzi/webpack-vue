@@ -26,6 +26,12 @@ const routes = [
   {
   	path: '/reserve4', component: require('../index/module/reservefour/reserveFour.vue')
   },
+  {
+  	path: '/reserve5', component: require('../index/module/reservefive/reserveFive.vue')
+  },
+  {
+  	path: '/reserve6', component: require('../index/module/reservesix/reserveSix.vue')
+  },
   // {
   // 	path:'*',redirect:'/first'
   // }
