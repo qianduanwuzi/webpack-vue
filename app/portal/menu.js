@@ -1,6 +1,6 @@
 module.exports = [
     {
-        name:'个人信息',
+        name:'cookie研究',
         iconname:'icon-mine',
         show:true,
         url:'/personalmes',
@@ -30,7 +30,7 @@ module.exports = [
         url:'/reserve3',
     },
     {
-        name:'预留4',
+        name:'h5上传研究',
         iconname:'icon-other',
         show:false,
         url:'/reserve4',
