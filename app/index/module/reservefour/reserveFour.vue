@@ -1,6 +1,6 @@
 <template>
   <div>
-      多图片上传
+      多图片上传h5-fileReader读取文件
       <input type="file" id="file" multiple/>
       <div id="result"></div>
       <input type="button" value="读取图像" @click="readAsDataURL()" />
