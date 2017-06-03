@@ -25,16 +25,17 @@
     methods: {
       submit() {
         var form = document.forms.namedItem('fileinfo');
-       var oData = new FormData(form);
+       var oData = new FormData(form); //oData输出为原型。访问不到具体的key-value值。可通过xxx.get('')获取对应的数据
        oData.append('test','test')
-       console.log(oData)
+       console.log(oData.get('test'))
+      //  console.log(oData)
         // fd.append("CustomField", "This is some extra data");
         // $.ajax({
         //   url: "",
         //   type: "POST",
         //   data: fd,
-        //   processData: false,  // 不处理数据
-        //   contentType: false   // 不设置内容类型
+        //   processData: false,  // ****不处理数据
+        //   contentType: false   // ****不设置内容类型
         // });
       },
     },
