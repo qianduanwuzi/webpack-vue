@@ -32,6 +32,12 @@ export default {
       //   cb()
       // }
       cb();
+      // let a = '3'
+      // cb && cb(a)
+      if(cb) {
+        console.log('2');
+        cb()
+      }
       console.log('4')
     },
     haha: function(){

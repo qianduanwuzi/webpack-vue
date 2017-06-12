@@ -1,6 +1,6 @@
 module.exports = [
     {
-        name:'个人信息',
+        name:'cookie研究',
         iconname:'icon-mine',
         show:true,
         url:'/personalmes',
@@ -18,21 +18,39 @@ module.exports = [
         url:'/reserve1',
     },
     {
-        name:'预留2',
+        name:'回调函数',
         iconname:'icon-other',
         show:false,
         url:'/reserve2',
     },
     {
-        name:'预留3',
+        name:'call方法',
         iconname:'icon-other',
         show:false,
         url:'/reserve3',
     },
     {
-        name:'预留4',
+        name:'h5上传研究',
         iconname:'icon-other',
         show:false,
         url:'/reserve4',
+    },
+     {
+        name:'富文本',
+        iconname:'icon-other',
+        show:false,
+        url:'/reserve5',
+    },
+    {
+        name:'promise',
+        iconname:'icon-other',
+        show:false,
+        url:'/reserve6',
+    },
+    {
+        name:'generator',
+        iconname:'icon-other',
+        show:false,
+        url:'/reserve7',
     },
 ]
