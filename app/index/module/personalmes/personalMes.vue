@@ -17,7 +17,7 @@
     },
     mounted: function () {
       var date = new Date();
-      date.setTime(date.getTime()+1*60*1000);
+      date.setTime(date.getTime()+1*60*1000);//有效时间为1分钟
       document.cookie = 'tip=888;expires='+date.toUTCString();//max-age第一次为准进来设置有效时间。expires是最后一次为准设置
     },
     methods: {

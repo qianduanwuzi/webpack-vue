@@ -47,4 +47,10 @@ module.exports = [
         show:false,
         url:'/reserve6',
     },
+    {
+        name:'generator',
+        iconname:'icon-other',
+        show:false,
+        url:'/reserve7',
+    },
 ]

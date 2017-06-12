@@ -26,6 +26,8 @@ export default {
     test: function(cb){
       //do something
       console.log('1');
+      // let a = '3'
+      // cb && cb(a)
       if(cb) {
         console.log('2');
         cb()

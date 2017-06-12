@@ -19,7 +19,15 @@ export default {
   },
   computed:{
   },
+  mounted:function(){
+      //刷新
+       this.menus.map((one,index) =>{
+                if(one.url == this.$route.path) one.show = true
+                else one.show = false
+          })
+  },
   methods:{
+      //点击menu
       clickHandler: function(ind){
           this.menus.map((one,index) =>{
                 if(index == ind) one.show = true
