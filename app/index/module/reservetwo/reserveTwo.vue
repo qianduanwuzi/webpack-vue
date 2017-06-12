@@ -1,7 +1,8 @@
 <template>
   <div>
       <!--研究回调函数-->
-      研究回调函数
+      研究回调函数：
+      <div>代码从上往下走，有时需要在a方法执行之后才执行b方法。函数也是个对象，可存在变量。所以可将之作为参数传给一个方法</div>
   </div>
 </template>
 
@@ -26,10 +27,11 @@ export default {
     test: function(cb){
       //do something
       console.log('1');
-      if(cb) {
-        console.log('2');
-        cb()
-      }
+      // if(cb) {
+      //   console.log('2');
+      //   cb()
+      // }
+      cb();
       console.log('4')
     },
     haha: function(){

@@ -1,8 +1,7 @@
 <template>
   <div>
-      预留4
-     <!-- 路由匹配到的组件将渲染在这里 -->
-       <router-view></router-view>
+      study
+     
   </div>
 </template>
 
@@ -14,6 +13,14 @@ export default {
   },
   computed:{
   },
+  mounted: function(){
+    this.test();
+  },
+   methods:{
+     test(){
+       console.log('test')
+     }
+   },
   components: {
   }
 }
