@@ -39,9 +39,9 @@ const routes = [
   {
   	path: '/reserve7', component:ReserveSeven, meta:{requireAuth: true}
   },
-  // {
-  //   path:'*',redirect:'/login'
-  // },
+  {
+    path:'*',redirect:'/login'
+  },
 ]
 
 
