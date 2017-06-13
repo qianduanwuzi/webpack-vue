@@ -25,6 +25,11 @@ export default {
 
 
 <style>
+    body {
+        margin: 0;
+        border: 0;
+        padding: 0;
+    }
     .nav{
         float: left;
         width:10%;
@@ -33,6 +38,7 @@ export default {
     .container{
         /*position: relative;*/
         /*height: 960px;*/
+        font-size: 14px;
         overflow: hidden;
         font-family: "Microsoft YaHei";
     }

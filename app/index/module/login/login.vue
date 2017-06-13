@@ -7,9 +7,11 @@
 </template>
 
 <script>
+import css from './login.css';
 export default {
   data () {
     return {
+        css,
         password:'',
         username:''
     }
@@ -23,7 +25,10 @@ export default {
       login(){
           if(this.check()){
               if(this.username == 'wuzi' && this.password == 'gua66666'){
-                  localStorage.setItem('username','wuzi')
+                  var date = new Date();
+                  date.setTime(date.getTime() + 10*60*1000)
+                  document.cookie = 'username=wuzi;expires=' + date.toUTCString();
+                //   localStorage.setItem('username','wuzi')
               }
           }else{
               alert('账号密码不正确')
