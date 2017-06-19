@@ -16,8 +16,8 @@ export default {
   },
   mounted: function(){
     // this.test1()
-    var editor = new wangEditor('div1');
-    editor.create();
+    // var editor = new wangEditor('div1');
+    // editor.create();
   },
   computed:{
   },

@@ -1,12 +1,13 @@
 <template>
   <div class="container">
     <div class="nav">
-        <leftsiderbar></leftsiderbar>
+        <router-view></router-view>
+        <!--<leftsiderbar></leftsiderbar>-->
     </div>
-     <div class="main">
+     <!--<div class="main">-->
      <!-- 路由匹配到的组件将渲染在这里 -->
-       <router-view></router-view>
-     </div>
+       <!--<router-view></router-view>-->
+     <!--</div>-->
   </div>
 </template>
 <script>
@@ -25,14 +26,14 @@ export default {
 
 
 <style>
-    body {
+    *{
         margin: 0;
         border: 0;
         padding: 0;
     }
     .nav{
-        float: left;
-        width:10%;
+        /*float: left;*/
+        width:100%;
         height: 100%;
     }
     .container{
@@ -44,7 +45,7 @@ export default {
     }
     .main{
         float: right;
-        width: 89.5%;
+        width: 100%;
         /*position: absolute;*/
         top: 0px;
         background-color: #f7f7f7;

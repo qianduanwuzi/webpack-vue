@@ -1,9 +1,14 @@
 <template>
+    <div style="height:100%">
         <div :class="css.menusBox">
             <div v-for="(one,index) in menus" @click="clickHandler(index)">
                     <router-link :to='one.url' :class="[one.show ? css.highlight : '',css.everyBar]"><icon :iconname="one.iconname"></icon><span :class="css.iconname">{{one.name}}</span></router-link>
             </div>
         </div>
+        <div style="float:right;width:89%;height:100%">
+            <router-view></router-view>
+        </div>
+    </div>
 </template>
 
 <script>

@@ -1,0 +1,33 @@
+.loginBox{
+    background: url('../../imgs/bg.jpg');
+    height:100%;
+}
+
+.loginInBox{
+    position: fixed;
+    top: 38%;
+    left: 47%;
+    background-color: rgba(0,0,0,0.5);
+    height: 175px;
+    width: 300px;
+    border-radius: 5px;
+}
+
+.keyword{
+    margin-right: 14px;
+}
+
+.line{
+    /*margin-bottom: 15px;*/
+    margin: 30px auto 15px 20px;
+}
+
+.line input {
+    border-radius: 3px;
+    height: 20px;
+}
+
+.label{
+    font-weight: bold;
+    font-size: 16px;
+}

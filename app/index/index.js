@@ -11,23 +11,25 @@ Vue.use(VueResource);
 Vue.config.debug = true;
 
 //创建路由实例
-const router = new VueRouter({routes});
+const router = new VueRouter({ routes });
 
 //路由拦截
-router.beforeEach((to, from, next) =>{
-  if(to.matched.some(req => req.meta.requireAuth)){
+router.beforeEach((to, from, next) => {
+  console.log(from,from.path != '/')
+  if (from.path != '/') {
+    if (to.matched.some(req => req.meta.requireAuth)) {
       let cookie = document.cookie;
       let each = cookie.split(';');
       let has = false;
-      for(let i in each){
-        if(each[i].split('=')[0].trim() == 'username'){
+      for (let i in each) {
+        if (each[i].split('=')[0].trim() == 'username') {
           has = true;
           break;
         }
       }
-      if(has){
+      if (has) {
         next()
-      }else{
+      } else {
         console.log('没有登录')
         alert('身份验证失败，请重新登录')
         next({
@@ -35,6 +37,9 @@ router.beforeEach((to, from, next) =>{
           // query: {redirect : to.fullPath}
         })
       }
+    } else {
+      next()
+    }
   }else{
     next()
   }

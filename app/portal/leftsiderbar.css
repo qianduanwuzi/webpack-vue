@@ -10,8 +10,11 @@
     bottom: 0;*/
     height: 100%;
     /*left: 0;*/
-    width: 100%;
+    /*width: 100%;*/
     overflow: hidden;
     box-shadow: 1px 0 15px rgba(0, 0, 0, 0.07);
     opacity: 1;
+    float: left;
+    width:10%;
+    height: 100%;
 }
