@@ -9,8 +9,8 @@
                 <label :class="[css.keyword,css.label]">密</label><label :class="css.label">码：</label>
                 <input type="text" name="password" v-model="password" />
             </div>
-            <!--<button @click="login" name="登录">登录</button>-->
-            <Btn name="登录" :widths="168" :heights="30" style="margin-left:87px" ></Btn>
+            <button @click="login" name="登录" :class="css.login">登录</button>
+            <!--<Btn name="登录" :widths="168" :heights="30" style="margin-left:87px" ></Btn>-->
         </div>
     </div>
 </template>

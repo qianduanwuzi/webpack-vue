@@ -21,36 +21,36 @@ const routes = [
     component: LeftSiderbar,
     children:[
               {
-                path: 'personalmes', component: Personalmes, meta:{requireAuth: true}
+                path: 'personalmes', component: require('../index/module/personalmes/personalMes'), meta:{requireAuth: true}
               },
               {
-                path: 'projectexp', component: ProjectExp, meta:{requireAuth: true}
+                path: 'projectexp', component: require('../index/module/projectexp/projectExp'), meta:{requireAuth: true}
               },
               {
-                path: 'reserve1', component: ReserveOne, meta:{requireAuth: true}
+                path: 'reserve1', component: require('../index/module/reserveone/reserveOne'), meta:{requireAuth: true}
               },
               {
-                path: 'reserve2', component: ReserveTwo, meta:{requireAuth: true}
+                path: 'reserve2', component: require('../index/module/reservetwo/reserveTwo'), meta:{requireAuth: true}
               },
               {
-                path: 'reserve3', component: ReserveThree, meta:{requireAuth: true}
+                path: 'reserve3', component: require('../index/module/reservethree/reserveThree'), meta:{requireAuth: true}
               },
               {
-                path: 'reserve4', component: ReserveFour, meta:{requireAuth: true}
+                path: 'reserve4', component: require('../index/module/reservefour/reserveFour'), meta:{requireAuth: true}
               },
               {
-                path: 'reserve5', component: ReserveFive, meta:{requireAuth: true}
+                path: 'reserve5', component: require('../index/module/reservefive/reserveFive'), meta:{requireAuth: true}
               },
               {
-                path: 'reserve6', component: ReserveSix, meta:{requireAuth: true}
+                path: 'reserve6', component: require('../index/module/reservesix/reserveSix'), meta:{requireAuth: true}
               },
               {
-                path: 'reserve7', component:ReserveSeven, meta:{requireAuth: true}
+                path: 'reserve7', component: require('../index/module/reserveseven/reserveSeven'), meta:{requireAuth: true}
               },
              ]
   },
   {
-    path: '/login', component: require('../index/module/login/login.vue')
+    path: '/login', component: require('../index/module/login/login')
   },
   {
     path:'*',redirect:'/login'
