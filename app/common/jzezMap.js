@@ -1,8 +1,8 @@
 //封装map
 function JzezMap(x,id,z,ra,ex){
     this.x = x; //坐标 数组
-    this.id = id; //dom-id 地图显示
-    this.z = z;
+    this.id = id || 'map'; //dom-id 地图显示
+    this.z = z || 13;
     this.map = new AMap.Map(id,{
         resizeEnable: true,
         zoom: z || 18,  //地图显示的缩放级别，若center与level未赋值，地图初始化默认显示用户所在城市范围

@@ -10,7 +10,7 @@
 
 <script>
 var Thenjs = require('thenjs');
-import JzezMap from './jzezMap'
+import JzezMap from '../../../common/jzezMap'
 import css from './reserveone.css'
 export default {
   data () {
@@ -32,7 +32,7 @@ export default {
     //                 mp.getAddress((a) => {this.address = a;})})
     //                 .then(function(){console.log(mp);mp.setFitView()});
     mp.getAddress((a) =>{
-        console.log(this)
+        console.log('35',this,a)
         this.address = a;
     });
     mp.setFitView()
