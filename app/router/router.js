@@ -48,7 +48,7 @@ const routes = [
                 path: 'reserve7', component: require('../index/module/reserveseven/reserveSeven'), meta:{requireAuth: true}
               },
                {
-                path: 'reserve8', component: require('../index/store/testStore'), meta:{requireAuth: true}
+                path: 'reserve8', component: require('../index/store/testStore.vue'), meta:{requireAuth: true}
               },
                {
                 path: 'reserve9', component: require('../index/module/reserveseven/reserveSeven'), meta:{requireAuth: true}

@@ -6,12 +6,12 @@
 // import css from './login.css';
 import { mapGetters } from 'vuex';
 export default {
-    // props:{
-    //     datas:{
-    //         type: String,
-    //         default: 'propdatas'
-    //     }
-    // },
+    props:{
+        datas:{
+            type: String,
+            default: 'propdatas'
+        }
+    },
     data() {
         return {
           

@@ -1,9 +1,9 @@
-import Vue from 'vue'
-import Vuex from 'vuex'
+// import Vue from 'vue'
+// import Vuex from 'vuex'
 
-Vue.use(Vuex)
+// Vue.use(Vuex)
 
-export default new Vuex.Store({
+const testStore = {
     state:{
         platform: ''
     },
@@ -19,12 +19,12 @@ export default new Vuex.Store({
         SET_APP: (state, platform) => {
             // console.log('12',platform)
             state.platform = platform;
-            // Object.assign(state, {platform: platform})
-            // console.log(JSON.stringify(state));
         }
     },
     //获取state的值
     getters: {
         getApp: (state) => state.platform
     }
-})
+}
+
+export default testStore

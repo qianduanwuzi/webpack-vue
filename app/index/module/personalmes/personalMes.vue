@@ -20,6 +20,7 @@ export default {
   computed: {
   },
   mounted: function () {
+    // console.log('19--->',this.$store.getters.getApp);
     this.getAddress()
 
     var date = new Date();

@@ -1,7 +1,7 @@
 <template>
     <div>
         <div>vuex的研究 {{getApp}}</div>
-        <!--<Com :datas="getApp"></Com>-->
+        <Com :datas="getApp"></Com>
     </div>
 </template>
 

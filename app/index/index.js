@@ -6,7 +6,7 @@ import VueResource from 'vue-resource'
 import apps from './components/app'
 import Util from '../common/util'
 import components from '../config/components'
-import store from './store/store'
+import store from './store/index'
 
 //初始化全局组件
 for(let i in components){

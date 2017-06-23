@@ -1,5 +1,6 @@
 <template>
-    <button :class="css.btn" :style="newstyle">{{name}}</button>
+    <button :class="css.btn" :style="newstyle" @click="clickBtn">
+        {{name}}</button>
 </template>
 
 <script>
@@ -8,29 +9,41 @@ export default {
     data() {
         return {
             css,
-            newstyle:{
+            newstyle: {
                 color: this.color,
                 height: this.heights + 'px',
                 width: this.widths + 'px'
             },
         }
     },
-    props:{
-        name:{ //按钮名
+    props: {
+        type: {
+            type: String,
+            default: 'login'
+        },
+        name: { //按钮名
             type: String,
             default: ''
         },
-        color:{ //按钮颜色
+        color: { //按钮颜色
             type: String,
-            default:'#2496b0'
+            default: '#2496b0'
         },
-        widths:{
+        widths: {
             type: Number,
             default: 100
         },
-        heights:{
+        heights: {
             type: Number,
             default: 35
+        },
+        data: {
+            // type: Object,
+            default: ''
+        },
+        arr: {
+            type: Array,
+            default: []
         }
     },
     computed: {
@@ -39,7 +52,12 @@ export default {
 
     },
     methods: {
-      
+        clickBtn() {
+            console.log(this.heights,this.widths,this.data.user,this.arr)
+            if (this.type == 'login') {
+                this.$store.dispatch('loginAllow', {api:'/api/login',userInfo: this.data})
+            }
+        }
     },
     components: {
     }
