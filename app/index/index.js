@@ -1,11 +1,12 @@
-import Vue from 'Vue'
-import Vuex from 'Vuex'
+import Vue from 'vue'
+import vuex from 'vuex'
 import VueRouter from "vue-router"
 import routes from '../router/router'
 import VueResource from 'vue-resource'
 import apps from './components/app'
 import Util from '../common/util'
 import components from '../config/components'
+import store from './store/store'
 
 //初始化全局组件
 for(let i in components){
@@ -17,7 +18,7 @@ for(let i in components){
 Vue.use(VueRouter);
 Vue.use(VueResource);
 
-Vue.use(Vuex);
+Vue.use(vuex);
 
 Vue.config.debug = true;
 
@@ -68,5 +69,6 @@ router.beforeEach((to, from, next) => {
 const app = new Vue({
   el: '#app',
   router,
+  store,
   render: h => h(apps)
 })

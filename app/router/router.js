@@ -3,15 +3,15 @@ const Test = resolve => require(['../index/module/testing/test'], resolve)
 
 const LeftSiderbar  = resolve => require(['../portal/leftSiderBar'], resolve)
 
-const Personalmes = resolve => require(['../index/module/personalmes/personalMes'], resolve)
-const ProjectExp = resolve => require(['../index/module/projectexp/projectExp'], resolve)
-const ReserveOne = resolve => require(['../index/module/reserveone/reserveOne'], resolve)
-const ReserveTwo = resolve => require(['../index/module/reservetwo/reserveTwo'], resolve)
-const ReserveThree = resolve => require(['../index/module/reservethree/reserveThree'], resolve)
-const ReserveFour = resolve => require(['../index/module/reservefour/reserveFour'], resolve)
-const ReserveFive = resolve => require(['../index/module/reservefive/reserveFive'], resolve)
-const ReserveSix = resolve => require(['../index/module/reservesix/reserveSix'], resolve)
-const ReserveSeven = resolve => require(['../index/module/reserveseven/reserveSeven'], resolve)
+// const Personalmes = resolve => require(['../index/module/personalmes/personalMes'], resolve)
+// const ProjectExp = resolve => require(['../index/module/projectexp/projectExp'], resolve)
+// const ReserveOne = resolve => require(['../index/module/reserveone/reserveOne'], resolve)
+// const ReserveTwo = resolve => require(['../index/module/reservetwo/reserveTwo'], resolve)
+// const ReserveThree = resolve => require(['../index/module/reservethree/reserveThree'], resolve)
+// const ReserveFour = resolve => require(['../index/module/reservefour/reserveFour'], resolve)
+// const ReserveFive = resolve => require(['../index/module/reservefive/reserveFive'], resolve)
+// const ReserveSix = resolve => require(['../index/module/reservesix/reserveSix'], resolve)
+// const ReserveSeven = resolve => require(['../index/module/reserveseven/reserveSeven'], resolve)
 
 // meta为true时需要登录成功(判断cookie)才能访问
 const routes = [
@@ -46,6 +46,12 @@ const routes = [
               },
               {
                 path: 'reserve7', component: require('../index/module/reserveseven/reserveSeven'), meta:{requireAuth: true}
+              },
+               {
+                path: 'reserve8', component: require('../index/store/testStore'), meta:{requireAuth: true}
+              },
+               {
+                path: 'reserve9', component: require('../index/module/reserveseven/reserveSeven'), meta:{requireAuth: true}
               },
              ]
   },
