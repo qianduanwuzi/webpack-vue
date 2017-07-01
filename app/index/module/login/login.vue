@@ -29,6 +29,7 @@ export default {
             arrs:[1,2,3]
         }
     },
+   
     computed: {
         datas: function(){
             return Object.assign({un:this.username},{pw:this.password})
@@ -38,23 +39,22 @@ export default {
         })
     },
     mounted: function () {
-        // this.datas = {user:'1'}
     },
     methods: {
-        login() {
-            if (this.check()) {
-                if (this.username.trim() == 'wuzi' && this.password.trim() == 'gua66666') {
-                    // var date = new Date();
-                    // date.setTime(date.getTime() + 10 * 60 * 1000)
-                    // document.cookie = 'username=wuzi;expires=' + date.toUTCString();
-                    Util.setCookie(60,'username','wuzi');
-                    this.$router.push({ path: 'personalmes' })
-                    //   localStorage.setItem('username','wuzi')
-                }
-            } else {
-                alert('账号密码不正确')
-            }
-        },
+        // login() {
+        //     if (this.check()) {
+        //         if (this.username.trim() == 'wuzi' && this.password.trim() == 'gua66666') {
+        //             // var date = new Date();
+        //             // date.setTime(date.getTime() + 10 * 60 * 1000)
+        //             // document.cookie = 'username=wuzi;expires=' + date.toUTCString();
+        //             Util.setCookie(60,'username','wuzi');
+        //             this.$router.push({ path: 'personalmes' })
+        //             //   localStorage.setItem('username','wuzi')
+        //         }
+        //     } else {
+        //         alert('账号密码不正确')
+        //     }
+        // },
         check() {
             return this.password.trim() != '' && this.username.trim() != ''
         },
@@ -63,7 +63,7 @@ export default {
     watch:{
         "getLoginInfo": function(){
             // this.$store.state.loginStore.loginAllow
-            if(this.getLoginInfo){
+            if(this.getLoginInfo && this.check()){
                 Util.setCookie(60,'username','wuzi');
                 this.$router.push({ path: 'personalmes' })
             }else{

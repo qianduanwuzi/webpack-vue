@@ -31,6 +31,9 @@ export default {
         border: 0;
         padding: 0;
     }
+    input,option,button{
+        border: 1px solid gray;
+    }
     .nav{
         /*float: left;*/
         width:100%;

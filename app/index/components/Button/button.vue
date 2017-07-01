@@ -10,7 +10,7 @@ export default {
         return {
             css,
             newstyle: {
-                color: this.color,
+                color: this.colors,
                 height: this.heights + 'px',
                 width: this.widths + 'px'
             },
@@ -25,7 +25,7 @@ export default {
             type: String,
             default: ''
         },
-        color: { //按钮颜色
+        colors: { //按钮颜色
             type: String,
             default: '#2496b0'
         },
@@ -49,7 +49,6 @@ export default {
     computed: {
     },
     mounted: function () {
-
     },
     methods: {
         clickBtn() {

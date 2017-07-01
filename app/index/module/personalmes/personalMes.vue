@@ -17,9 +17,16 @@ export default {
       address:''
     }
   },
+   props:{
+        test:{
+            type: String,
+            default: ''
+        }
+    },
   computed: {
   },
   mounted: function () {
+    console.log(this)
     // console.log('19--->',this.$store.getters.getApp);
     this.getAddress()
 

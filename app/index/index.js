@@ -14,6 +14,14 @@ for(let i in components){
   Vue.component(one.name, one.instance)
 }
 
+//自定义指令
+Vue.directive('showvalue',{
+  bind: function(el, binding, vnode){
+    el.innerHtml = 
+    'value:' + binding.value
+  }
+})
+
 //注册路由
 Vue.use(VueRouter);
 Vue.use(VueResource);
