@@ -17,10 +17,31 @@ for(let i in components){
 //自定义指令
 Vue.directive('showvalue',{
   bind: function(el, binding, vnode){
-    el.innerHtml = 
+    el.innerHTML = 
     'value:' + binding.value
   }
 })
+
+Vue.directive('bg',{
+  bind: function(el, binding, vnode){
+    el.style.backgroundColor = binding.expression
+  }
+})
+
+
+
+// Vue.directive('demo', {
+//   bind: function (el, binding, vnode) {
+//     var s = JSON.stringify
+//     el.innerHTML =
+//       'name: '       + s(binding.name) + '<br>' +
+//       'value: '      + s(binding.value) + '<br>' +
+//       'expression: ' + s(binding.expression) + '<br>' +
+//       'argument: '   + s(binding.arg) + '<br>' +
+//       'modifiers: '  + s(binding.modifiers) + '<br>' +
+//       'vnode keys: ' + Object.keys(vnode).join(', ')
+//   }
+// })
 
 //注册路由
 Vue.use(VueRouter);

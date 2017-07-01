@@ -42,7 +42,11 @@
             
         <span>{{mes}}</span>
 
-        <span v-showvalue="is my first directive"></span>
+        <div v-showvalue="mes" v-bg="blue"></div>
+
+        <div v-bg="red">123</div>
+
+        <!--<div id="hook-arguments-example" v-demo:hello.a.b="message"></div>-->
     </div>
 </template>
 
