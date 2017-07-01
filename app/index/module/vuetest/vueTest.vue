@@ -46,6 +46,7 @@
 
         <div v-bg="red">123</div>
 
+        <div>{{mx}}</div>
         <!--<div id="hook-arguments-example" v-demo:hello.a.b="message"></div>-->
     </div>
 </template>
@@ -53,9 +54,11 @@
 <script>
 import one from './one.vue';
 import two from './two.vue';
+import myMixin from '../../mixin/mixin.js';
 var nav1 = { template: '<p>this is nav1</p>' };
 var nav2 = { template: '<p>this is nav2</p>' };
 export default {
+    mixins:[myMixin],
     props: {
     },
     data() {

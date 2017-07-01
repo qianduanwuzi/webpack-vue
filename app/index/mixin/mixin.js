@@ -1,4 +1,9 @@
 var myMixin = {
+    data() {
+        return {
+            mx: 'mixnwenben'
+        }
+    },
     created: function () {
         this.hello()
     },
@@ -8,3 +13,5 @@ var myMixin = {
         }
     }
 }
+
+export default myMixin
