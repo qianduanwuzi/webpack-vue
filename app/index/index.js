@@ -7,6 +7,8 @@ import apps from './components/app'
 import Util from '../common/util'
 import components from '../config/components'
 import store from './store/index'
+import WZPlugin from '../plugin/plu'
+import * as filters from './filter/index'
 
 //初始化全局组件
 for(let i in components){
@@ -15,33 +17,25 @@ for(let i in components){
 }
 
 //自定义指令
-Vue.directive('showvalue',{
-  bind: function(el, binding, vnode){
-    el.innerHTML = 
-    'value:' + binding.value
-  }
-})
-
-Vue.directive('bg',{
-  bind: function(el, binding, vnode){
-    el.style.backgroundColor = binding.expression
-  }
-})
-
-
-
-// Vue.directive('demo', {
-//   bind: function (el, binding, vnode) {
-//     var s = JSON.stringify
-//     el.innerHTML =
-//       'name: '       + s(binding.name) + '<br>' +
-//       'value: '      + s(binding.value) + '<br>' +
-//       'expression: ' + s(binding.expression) + '<br>' +
-//       'argument: '   + s(binding.arg) + '<br>' +
-//       'modifiers: '  + s(binding.modifiers) + '<br>' +
-//       'vnode keys: ' + Object.keys(vnode).join(', ')
+// Vue.directive('showvalue',{
+//   bind: function(el, binding, vnode){
+//     el.innerHTML = 
+//     'value:' + binding.value
 //   }
 // })
+
+// Vue.directive('bg',{
+//   bind: function(el, binding, vnode){
+//     el.style.backgroundColor = binding.expression
+//   }
+// })
+
+Object.keys(filters).forEach(key => {
+  Vue.filter(key, filters[key])
+})
+
+// 使用插件
+Vue.use(WZPlugin, { someOption: true })
 
 //注册路由
 Vue.use(VueRouter);

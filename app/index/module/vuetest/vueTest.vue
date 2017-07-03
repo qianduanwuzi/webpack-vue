@@ -40,7 +40,7 @@
                 <component :is="currentView"></component>
             </keep-alive>-->
             
-        <span>{{mes}}</span>
+        <span>{{mes | upcase}}</span>
 
         <div v-showvalue="mes" v-bg="blue"></div>
 
