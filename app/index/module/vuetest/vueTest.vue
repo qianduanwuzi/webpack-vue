@@ -48,6 +48,8 @@
 
         <div>{{mx}}</div>
         <!--<div id="hook-arguments-example" v-demo:hello.a.b="message"></div>-->
+
+        <div v-html="html"></div>
     </div>
 </template>
 
@@ -71,13 +73,15 @@ export default {
             items: [{ text: 'a' }, { text: 'b' }, { text: 'c' }],
             currentView: nav1,
             mes: 'old mes',
-            age: 20
+            age: 20,
+            html: 'lala<p>this is a html text</p>lala'
         }
     },
     computed: {
 
     },
     mounted: function () {
+        console.log(this)
         // 
         // this.$set(this.datalist, 1, 10)
         this.mes = 'new mes';
