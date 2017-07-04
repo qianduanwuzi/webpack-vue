@@ -44,6 +44,11 @@ module.exports = {
             loader: 'json'
           },
           {
+            test: /\.(png|jpg)$/,
+            exclude: /^node_modules$/,
+            loader: 'url?limit=2000&name=[name].[ext]' //注意后面那个limit的参数，当你图片大小小于这个限制的时候，会自动启用base64编码图片
+          },
+          {
             test: /\.css?$/,
             loader: ExtractTextPlugin.extract("vue-style-loader", "css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]") // 处理css
           }

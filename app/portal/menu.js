@@ -53,4 +53,22 @@ module.exports = [
         show:false,
         url:'/reserve7',
     },
+    {
+        name:'vuex1',
+        iconname:'icon-other',
+        show:false,
+        url:'/reserve8',
+    },
+    {
+        name:'vuex2',
+        iconname:'icon-other',
+        show:false,
+        url:'/reserve9',
+    },
+    {
+        name:'vue2研究',
+        iconname:'icon-other',
+        show:false,
+        url:'/reserve10',
+    },
 ]

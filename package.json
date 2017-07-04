@@ -51,6 +51,10 @@
     "webpack-hot-middleware": "^2.18.0"
   },
   "dependencies": {
-    "transform-runtime": "0.0.0"
+    "babel-preset-stage-2": "^6.24.1",
+    "style-loader": "^0.18.2",
+    "transform-runtime": "0.0.0",
+    "url-loader": "^0.5.9",
+    "vuex": "^2.3.1"
   }
 }

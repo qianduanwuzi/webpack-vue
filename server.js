@@ -70,3 +70,12 @@ server.listen(9966, function(){
     console.log('listening at http://localhost:9966');
 });
 
+// var port = 9966;
+// var express = require('express');
+// var app = express();
+
+// app.listen(port,function(){
+//     console.log('server listening at  localhost:'+port)
+// })
+
+
