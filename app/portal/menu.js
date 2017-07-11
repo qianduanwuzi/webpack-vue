@@ -71,4 +71,10 @@ module.exports = [
         show:false,
         url:'/reserve10',
     },
+    {
+        name:'drag研究',
+        iconname:'icon-other',
+        show:false,
+        url:'/reserve11',
+    },
 ]

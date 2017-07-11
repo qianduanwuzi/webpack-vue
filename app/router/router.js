@@ -56,6 +56,9 @@ const routes = [
               {
                 path: 'reserve10', component: require('../index/module/vuetest/vueTest'), meta:{requireAuth: true}
               },
+              {
+                path: 'reserve11', component: require('../index/module/testing/test'), meta:{requireAuth: true}
+              },
              ]
   },
   {

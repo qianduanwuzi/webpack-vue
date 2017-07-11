@@ -6,6 +6,7 @@ WZPlugin.install = function (Vue, options) {
         // 逻辑...
     }
     // 2. 添加全局自定义指令
+        //--设置背景颜色
     Vue.directive('bg', {
         bind: function (el, binding, vnode) {
             el.style.backgroundColor = binding.expression

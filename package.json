@@ -55,6 +55,8 @@
     "style-loader": "^0.18.2",
     "transform-runtime": "0.0.0",
     "url-loader": "^0.5.9",
-    "vuex": "^2.3.1"
+    "vue-server-renderer": "^2.3.4",
+    "vuex": "^2.3.1",
+    "vuex-router-sync": "^4.2.0"
   }
 }
