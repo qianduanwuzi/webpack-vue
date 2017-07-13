@@ -1,21 +1,23 @@
 const tipStore = {
-    state:{
-
+    state: {
+        msg: '提示消息',
+        type: 'success',
+        time: 3000,
+        timestamp: new Date().getTime() //确保数据变化
     },
-    actions:{
-        setTip({commit}, parqams){
-
+    actions: {
+        setTip({ commit }, params) {
+            commit(SET_TIP, params)
         }
     },
-    mutations:{
+    mutations: {
         SET_TIP: (state, param) => {
-
+            Object.assign(state, param)
         }
     },
-    getters:{
-        getTip: (state) => {
-            
-        }
+    getters: {
+        getTip: (state) => state
+
     }
 }
 

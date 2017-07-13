@@ -1,18 +1,18 @@
 <template>
   <div id="con">
     <!--<div id="location" style="width:100px;height:100px;border:1px solid black" @drop="drop($event)" @dragover="allowDrop($event)">
-            this is location
-            <div>this is middle</div>
-          </div>
-          <div id="dragTarget" draggable="true" @dragstart="drag($event)">
-            this is target
-          </div>
-        
-          <div style="margin-top: 60px;">
-            <div draggable="true" style="width:100px;height:30px;border:1px solid black" v-for="(one,index) in textData" :key="one" @dragstart="dddrag($event,index)" @drop="dddrop($event,index)" @dragover="allowDrop($event)">
-              {{one}}
+              this is location
+              <div>this is middle</div>
             </div>
-          </div>-->
+            <div id="dragTarget" draggable="true" @dragstart="drag($event)">
+              this is target
+            </div>
+          
+            <div style="margin-top: 60px;">
+              <div draggable="true" style="width:100px;height:30px;border:1px solid black" v-for="(one,index) in textData" :key="one" @dragstart="dddrag($event,index)" @drop="dddrop($event,index)" @dragover="allowDrop($event)">
+                {{one}}
+              </div>
+            </div>-->
     <b>draganddrop/拖动，支持上下移动</b>
     <div style="margin-top: 100px"></div>
     <div style="float: left">
@@ -23,7 +23,8 @@
   
     <div id="pur" style="height: 200px; width: 500px;border: 1px solid red;float: left" @drop.self="ddrop($event)" @dragover.self="allowDrop($event)">
       <div v-for="(one,index) in html" :key="index" @dragstart="rag($event,index)" @drop="rop($event,index)" @dragover="allowDrop($event)" draggable="true" style="margin-top: 10px">
-        <div style="display: inline-block" v-html="one"></div><button style="display: inline-block;height:30px;width:50px;background-color: rgb(202,23,29);color:white" @click="remove(index)">删除</button>
+        <div style="display: inline-block" v-html="one"></div>
+        <button style="display: inline-block;height:30px;width:50px;background-color: rgb(202,23,29);color:white" @click="remove(index)">删除</button>
       </div>
     </div>
   
@@ -77,7 +78,7 @@ export default {
       this.$set(this.html, ind, a)
     },
     remove(ind) {
-       this.html.splice(ind,1)
+      this.html.splice(ind, 1)
     },
     // dddrag(e, ind) {
     //   this.dragInd = ind;

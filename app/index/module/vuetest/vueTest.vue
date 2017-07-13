@@ -1,54 +1,54 @@
 <template>
     <div>
         <!--<div v-for="(one,index) in datalist">
-                                {{one}}
-                            </div>-->
+                                    {{one}}
+                                </div>-->
     
         <!--<div @click="click('mes', $event)">click me</div>-->
     
         <!--<a v-on:click.stop="doThis">doThis</a>-->
     
         <!--<div style="width:500px;height:500px" @click.self="clickBox">
-                                <div @click.self="clickchild">child</div>
-                            </div>-->
+                                    <div @click.self="clickchild">child</div>
+                                </div>-->
     
         <!--<button @keyup.enter="submit">键值修饰符</button>
-                            <input type="text" @keyup.enter="input" v-model="inputdata" /> -->
+                                <input type="text" @keyup.enter="input" v-model="inputdata" /> -->
     
         <!--<select name="" id="" v-model="selected" @change="showchange">
-                                <option value="1">a</option>
-                            </select>-->
+                                    <option value="1">a</option>
+                                </select>-->
     
         <!--<select name="" id="" v-model="selected" @change="showchange">
-                                <option :value="{num: 1}">a</option>
-                            </select>-->
+                                    <option :value="{num: 1}">a</option>
+                                </select>-->
     
         <!--<input v-model.trim="msg">-->
     
         <!--<p>{{total}}</p>
-                            <one :tests="test" testB="asd" @clickbtn='clickbt'></one>-->
+                                <one :tests="test" testB="asd" @clickbtn='clickbt'></one>-->
     
         <!--<two :items="items">
-                            <template slot="item" scope="props">
-                                <li>{{props.text}}</li>
-                            </template>
-                        </two>-->
+                                <template slot="item" scope="props">
+                                    <li>{{props.text}}</li>
+                                </template>
+                            </two>-->
     
         <!--<button @click="click(1)">nav1</button>
-            <button @click="click(2)">nav2</button>
-            <keep-alive>
-                <component :is="currentView"></component>
-            </keep-alive>-->
-            
+                <button @click="click(2)">nav2</button>
+                <keep-alive>
+                    <component :is="currentView"></component>
+                </keep-alive>-->
+    
         <span>{{mes | upcase}}</span>
-
+    
         <div v-showvalue="mes" v-bg="blue"></div>
-
+    
         <div v-bg="red">123</div>
-
+    
         <div>{{mx}}</div>
         <!--<div id="hook-arguments-example" v-demo:hello.a.b="message"></div>-->
-
+    
         <div v-html="html"></div>
     </div>
 </template>
@@ -60,7 +60,7 @@ import myMixin from '../../mixin/mixin.js';
 var nav1 = { template: '<p>this is nav1</p>' };
 var nav2 = { template: '<p>this is nav2</p>' };
 export default {
-    mixins:[myMixin],
+    mixins: [myMixin],
     props: {
     },
     data() {
