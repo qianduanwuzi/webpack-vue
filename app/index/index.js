@@ -51,25 +51,15 @@ const router = new VueRouter({ routes });
 
 //路由拦截
 router.beforeEach((to, from, next) => {
-  // console.log(from,from.path != '/')
   if (from.path != '/') {
     if (to.matched.some(req => req.meta.requireAuth)) {
-      // let cookie = document.cookie;
-      // let each = cookie.split(';');
-      // let has = false;
-      // for (let i in each) {
-      //   if (each[i].split('=')[0].trim() == 'username') {
-      //     has = true;
-      //     break;
-      //   }
-      // }
-      // if (has) {
       if (Util.getCookie('username')) {
         next()
       }
       else {
         console.log('没有登录')
-        alert('身份验证失败，请重新登录')
+        store.dispatch('setTip', { msg:'登录失效，请重新登录',type: 'err' })
+        // alert('身份验证失败，请重新登录')
         next({
           path: '/login',
           // query: {redirect : to.fullPath}

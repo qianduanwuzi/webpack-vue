@@ -1,7 +1,7 @@
 <template>
     <div style="height:100%">
         <div :class="css.menusBox">
-            <div v-for="(one,index) in menus" @click="clickHandler(index)">
+            <div v-for="(one,index) in menus" @click="clickHandler(index)" :key="one">
                     <router-link :to='one.url' :class="[one.show ? css.highlight : '',css.everyBar]"><icon :iconname="one.iconname"></icon><span :class="css.iconname">{{one.name}}</span></router-link>
             </div>
         </div>
@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import css from './leftsiderbar.css'
+import css from './leftsiderbar.css';
 import menu from './menu';
 import icon from '../index/components/icon/icon';
 export default {

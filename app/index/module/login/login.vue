@@ -61,12 +61,13 @@ export default {
     },
     components: {},
     watch:{
-        "getLoginInfo": function(){
+        "getLoginInfo.timeStamp": function(){
             // this.$store.state.loginStore.loginAllow
-            if(this.getLoginInfo && this.check()){
-                Util.setCookie(60,'username','wuzi');
+            if(this.getLoginInfo.loginAllow && this.check()){
+                alert('123')
+                Util.setCookie(1,'username','wuzi');
                 this.$router.push({ path: 'personalmes' });
-                this.$store.dispatch('setTip', { msg:'登录成功' })
+                this.$store.dispatch('setTip', { msg:'登录成功',type:'success' })
             }else{
                 alert('账号密码不正确')
             }

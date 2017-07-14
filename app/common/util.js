@@ -16,7 +16,7 @@ let Util = {
 
 
     //设置cookies
-    setCookie(min = 10, key, value) {
+    setCookie(min = 1, key, value) {
         var date = new Date();
         date.setTime(date.getTime() + min * 60 * 1000)
         // document.cookie = 'username=wuzi;expires=' + date.toUTCString();
