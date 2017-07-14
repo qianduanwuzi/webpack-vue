@@ -3,11 +3,12 @@ const tipStore = {
         msg: '提示消息',
         type: 'success',
         time: 3000,
-        timestamp: new Date().getTime() //确保数据变化
+        timestamp: 0 //确保数据变化
     },
     actions: {
         setTip({ commit }, params) {
-            commit(SET_TIP, params)
+            params.timestamp = new Date().getTime();
+            commit('SET_TIP', params)
         }
     },
     mutations: {

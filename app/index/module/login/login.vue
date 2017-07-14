@@ -65,7 +65,8 @@ export default {
             // this.$store.state.loginStore.loginAllow
             if(this.getLoginInfo && this.check()){
                 Util.setCookie(60,'username','wuzi');
-                this.$router.push({ path: 'personalmes' })
+                this.$router.push({ path: 'personalmes' });
+                this.$store.dispatch('setTip', { msg:'登录成功' })
             }else{
                 alert('账号密码不正确')
             }

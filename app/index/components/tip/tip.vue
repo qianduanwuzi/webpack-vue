@@ -1,7 +1,7 @@
 <template>
-    <div :class="tipInfo.type" style="display: show">
-        {{tipInfo.msg}}
-    </div>
+        <div :class="[css[tipInfo.type], css.tipBox]" :style="{display: show}">
+            {{tipInfo.msg}}
+        </div>
 </template>
 
 <script>
@@ -11,12 +11,9 @@ export default {
     data() {
         return {
             css,
-            newstyle: {
-                color: this.colors,
-                height: this.heights + 'px',
-                width: this.widths + 'px'
-            },
-            tipInfo: {}
+            tipInfo: {},
+            show: 'none'
+
         }
     },
     props: {
@@ -28,6 +25,7 @@ export default {
         })
     },
     mounted: function () {
+        console.log('28--->', this.getTipInfo.timestamp, this.getTipInfo.time)
     },
     methods: {
 
@@ -35,11 +33,12 @@ export default {
     components: {
     },
     watch: {
-        "getTipInfo": function () {
+        "getTipInfo.timestamp": function () {
+            this.show = 'block';
             this.tipInfo = this.getTipInfo;
-            this.$nextTick(function () {
-                
-            })
+            setTimeout(() => {
+                this.show = 'none'
+            }, this.getTipInfo.time)
         }
     }
 }
