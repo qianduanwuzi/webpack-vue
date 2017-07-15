@@ -1,7 +1,7 @@
 # base
-> A Vue.js project
-> 初次搭建vue环境 使用 webpack1+vue2.js+vue-router2+vuex+express
-> 使用了express中间件热加载没解决浏览器页面热更新问题，后期用webpack-dev-server代替
+* A Vue.js project
+* 初次搭建vue环境 使用 webpack1+vue2.js+vue-router2+vuex+express
+* 使用了express中间件热加载没解决浏览器页面热更新问题，后期用webpack-dev-server代替
 
 ```bash
 #step
@@ -12,7 +12,7 @@ localhost:9966
 项目主要针对现有项目需求，自己研究了vue2的api和一些技术，如h5、es6、高德地图使用，具体见menu菜单及代码
 ```
 
-## 项目目录结构 ##
+# 项目目录结构 
 
     > 就拿具体项目结构的来阐明，一些子文件为具体使用，故不作介绍
     |-- app
