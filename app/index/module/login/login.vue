@@ -64,7 +64,7 @@ export default {
         "getLoginInfo.timeStamp": function(){
             // this.$store.state.loginStore.loginAllow
             if(this.getLoginInfo.loginAllow && this.check()){
-                Util.setCookie(1,'username','wuzi');
+                Util.setCookie(60,'username','wuzi');
                 this.$router.push({ path: 'personalmes' });
                 this.$store.dispatch('setTip', { msg:'登录成功',type:'success' })
             }else{

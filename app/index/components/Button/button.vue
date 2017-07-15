@@ -52,7 +52,7 @@ export default {
     },
     methods: {
         clickBtn() {
-            console.log(this.heights,this.widths,this.data.user,this.arr)
+            // console.log(this.heights,this.widths,this.data.user,this.arr)
             if (this.type == 'login') {
                 this.$store.dispatch('loginAllow', {api:'/api/login',userInfo: this.data})
             }

@@ -8,8 +8,6 @@ const loginStore = {
         loginAllow({ commit }, param) {
             console.log('13', param)
             if (param.userInfo.pw == 'gua66666' && param.userInfo.un == 'wuzi') {
-                param.timeStamp = new Date().getTime();
-                param
                 console.log('can login')
                 commit('LOGIN_IN', {loginAllow: true,timeStamp: new Date().getTime()})
             } else {

@@ -36,7 +36,6 @@
     },
     methods: {
       readAsBinaryString() {
-        alert('123')
         var file = document.getElementById("file").files;
         console.log(file);
         var reader = new FileReader();

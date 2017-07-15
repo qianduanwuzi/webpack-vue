@@ -25,7 +25,7 @@ export default {
         })
     },
     mounted: function () {
-        console.log('28--->', this.getTipInfo.timestamp, this.getTipInfo.time)
+        // console.log('28--->', this.getTipInfo.timestamp, this.getTipInfo.time)
     },
     methods: {
 
