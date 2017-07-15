@@ -82,8 +82,20 @@ export default {
     computed: {
 
     },
+    // beforeCreate: function() {
+    //     alert('1')
+    // },
+    // created:function() {
+    //     alert('2')
+    // },
+    // beforeMount:function(){
+    //     alert('3')
+    // },
+    // mounted:function(){
+    //     alert('4')
+    // },
     mounted: function () {
-        console.log(this.myMethod(this.age))
+        // console.log(this.myMethod(this.age))
         // 
         // this.$set(this.datalist, 1, 10)
         this.mes = 'new mes';
@@ -98,10 +110,10 @@ export default {
         testTip() {
             this.$store.dispatch('setTip', { msg:'success' })
         },
-        // click(i) {
-        //     if (i == 1) this.currentView = nav1
-        //     if (i == 2) this.currentView = nav2
-        // }
+        click(i) {
+            if (i == 1) this.currentView = nav1
+            if (i == 2) this.currentView = nav2
+        }
 
         // clickbt(test) {
         //     alert(test)

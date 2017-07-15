@@ -1,5 +1,5 @@
 import axios from 'axios'
-
+let baseUrl = '';
 let fetch = {
     fetchGet(url, param) {
         return axios.get(url, {
