@@ -30,11 +30,12 @@ for(let i in components){
 //   }
 // })
 
+// 注册全局过滤器
 Object.keys(filters).forEach(key => {
   Vue.filter(key, filters[key])
 })
 
-// 使用插件
+// 使用自定义插件
 Vue.use(WZPlugin, { someOption: true })
 
 //注册路由
