@@ -9,7 +9,7 @@ npm install
 localhost:9966
 
 #Project description
-项目主要针对现有项目需求，自己研究了一些技术，如h5、es6、高德地图使用，具体见menu菜单及代码
+项目主要针对现有项目需求，自己研究了vue2的api和一些技术，如h5、es6、高德地图使用，具体见menu菜单及代码
 ```
 
 ## 项目目录结构 ##
