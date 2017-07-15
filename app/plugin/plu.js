@@ -2,8 +2,9 @@ var WZPlugin = {}
 
 WZPlugin.install = function (Vue, options) {
     // 1. 添加全局方法或属性
-    Vue.myGlobalMethod = function () {
+    Vue.testplu = function () {
         // 逻辑...
+        alert('this is test')
     }
     // 2. 添加全局自定义指令
         //--设置背景颜色
@@ -26,11 +27,10 @@ WZPlugin.install = function (Vue, options) {
         }
     })
     // 4. 添加实例方法
-    Vue.prototype.$myMethod = function (options) {
+    Vue.prototype.myMethod = function (options) {
         // 逻辑...
+        alert(options)
     }
 }
 
 export default WZPlugin.install
-
-// export defa

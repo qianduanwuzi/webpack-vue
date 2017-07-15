@@ -83,7 +83,7 @@ export default {
 
     },
     mounted: function () {
-        console.log(this)
+        console.log(this.myMethod(this.age))
         // 
         // this.$set(this.datalist, 1, 10)
         this.mes = 'new mes';
