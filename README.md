@@ -16,7 +16,7 @@ localhost:9966
 # fun
 * 登录-记住账号密码（利用cookie）
 * 封装了高德地图的一些api
-* vue2 api的研究及demo（路由拦截，混合mixin，自定义指令，自定义插件等）
+* vue2 api的研究及demo（组件化，路由拦截，混合mixin，自定义指令，自定义插件等已经项目里具体运用到）
 * vuex的研究及demo，已用到项目里，如tip提示，登录判断
 * es6特性的研究及demo
 * h5的filereader，支持多图预览上传（用到了Promise）
