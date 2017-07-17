@@ -61,14 +61,14 @@ import two from './two.vue';
 import myMixin from '../../mixin/mixin.js';
 var nav1 = { template: '<p>this is nav1</p>' };
 var nav2 = { template: '<p>this is nav2</p>' };
-Vue.component('temp', {
-    template: '<div>{{ message }}</div>',
-    data: function(){
-        return {
-            message: 'this is message'
-        }
-    }
-})
+// Vue.component('temp', {
+//     template: '<div>{{ message }}</div>',
+//     data: function(){
+//         return {
+//             message: 'this is message'
+//         }
+//     }
+// })
 export default {
     mixins: [myMixin],
     props: {

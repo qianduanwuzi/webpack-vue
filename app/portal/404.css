@@ -1,0 +1,37 @@
+.box{
+    background: url('../index/imgs/404-bg.jpg');
+    height: 100%;
+    color: #d6cab9;
+}
+
+.tipBox{
+    /*position: fixed;
+    top: 10%;
+    width: 400px;
+    text-align: center;*/
+}
+
+.num, .text, .back{
+    position: fixed;
+}
+
+.num{
+    top: 20%;
+    left: 50%;
+    font-size: 40px;
+}
+
+.text{
+    top: 46%;
+    left: 42%;
+    font-size: 20px;
+}
+
+.back{
+    top: 68%;
+    left: 50%;
+    font-size: 20px;
+    text-decoration: underline;
+    cursor: pointer;
+}
+

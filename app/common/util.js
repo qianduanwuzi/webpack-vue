@@ -23,7 +23,7 @@ let Util = {
         document.cookie = key + '=' + value + ';expires=' + date.toUTCString();
     },
 
-    //获取cookies某一key
+    //判断cookies包含某一key
     getCookie(key) {
         let cookie = document.cookie;
         let each = cookie.split(';');
@@ -35,6 +35,17 @@ let Util = {
             }
         }
         return has
+    },
+
+    //获取值
+    getCookieOne(key) {
+        let cookie = document.cookie;
+        let each = cookie.split(';');
+        for(let i in each){
+            if(each[i].split('=')[0].trim() == key){
+                return each[i].split('=')[1].trim()
+            }
+        }
     }
 
 }

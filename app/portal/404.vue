@@ -1,29 +1,38 @@
 <template>
-  <div>
-    对不起，您访问的地址有误或者页面不存在
-  </div>
+    <div :class="css.box">
+        <div :class="css.tipBox">
+            <div :class="css.num">404</div>
+            <div :class="css.text">对不起，您访问的地址有误或者页面不存在...</div>
+            <a @click="backToLast" :class="css.back">返回上一页</a>
+        </div>
+    
+    </div>
 </template>
 
 <script>
+import css from './404.css'
 export default {
-  data() {
-    return {
-      
-    }
-  },
-   props:{
-        
+    data() {
+        return {
+            css
+        }
     },
-  computed: {
-  },
-  mounted: function () {
+    props: {
 
-  },
-  methods: {
+    },
+    computed: {
+    },
+    mounted: function () {
 
-  },
-  components: {
-  }
+    },
+    methods: {
+        backToLast() {
+            this.$router.go(-1)
+        },
+
+    },
+    components: {
+    }
 }
 </script>
 
