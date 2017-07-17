@@ -3,6 +3,7 @@ const Test = resolve => require(['../index/module/testing/test'], resolve)
 
 const LeftSiderbar  = resolve => require(['../portal/leftSiderBar'], resolve)
 
+
 // const Personalmes = resolve => require(['../index/module/personalmes/personalMes'], resolve)
 // const ProjectExp = resolve => require(['../index/module/projectexp/projectExp'], resolve)
 // const ReserveOne = resolve => require(['../index/module/reserveone/reserveOne'], resolve)
@@ -65,8 +66,8 @@ const routes = [
     path: '/login', component: require('../index/module/login/login')
   },
   {
-    path:'*',redirect:'/login'
-  },
+    path:'*', component: require('../portal/404')
+  }
 ]
 
 
