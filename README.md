@@ -7,6 +7,7 @@
 ```bash
 #step
 npm install 
+npm run dev
 localhost:9966
 
 #Project description
