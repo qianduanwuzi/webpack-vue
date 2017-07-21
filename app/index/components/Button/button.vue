@@ -55,6 +55,10 @@ export default {
             // console.log(this.heights,this.widths,this.data.user,this.arr)
             if (this.type == 'login') {
                 this.$store.dispatch('loginAllow', {api:'/api/login',userInfo: this.data})
+            }else{
+                console.log(this.$root)
+                console.log(this.$parent) //重在理解this作用域
+                this.$emit('btnClickEvent')
             }
         }
     },

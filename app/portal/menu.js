@@ -77,4 +77,10 @@ module.exports = [
         show:false,
         url:'/reserve11',
     },
+    {
+        name:'$children/$parent',
+        iconname:'icon-other',
+        show:false,
+        url:'/reserve12',
+    },
 ]

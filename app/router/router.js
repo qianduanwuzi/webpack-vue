@@ -60,6 +60,9 @@ const routes = [
               {
                 path: 'reserve11', component: require('../index/module/testing/test'), meta:{requireAuth: true}
               },
+              {
+                path: 'reserve12', component: require('../index/module/children/children'), meta:{requireAuth: true}
+              },
              ]
   },
   {
