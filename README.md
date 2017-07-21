@@ -1,5 +1,6 @@
 # base
 * A Vue.js project
+* 代码纯手打，尝试了很多东西。这里也没用到任何ui，除了webpack配置大部分复制我得react项目。
 * 初次搭建vue环境 使用 webpack1+vue2.js+vue-router2+vuex+express
 * 使用了express中间件热加载没解决浏览器页面热更新问题，后期用webpack-dev-server代替
 
@@ -11,6 +12,17 @@ localhost:9966
 #Project description
 项目主要针对现有项目需求，自己研究了vue2的api和一些技术，如h5、es6、高德地图使用，具体见menu菜单及代码
 ```
+
+# fun
+* 登录-记住账号密码（利用cookie）
+* 封装了高德地图的一些api
+* vue2 api的研究及demo（组件化，路由拦截，混合mixin，自定义指令，自定义插件等已经项目里具体运用到）
+* vuex的研究及demo，已用到项目里，如tip提示，登录判断
+* es6特性的研究及demo
+* h5的filereader，支持多图预览上传（用到了Promise）
+* h5的dragandon，支持拖动拉拽，上下移动及删除
+* h5的一些api，如geolocation等
+
 
 # 项目目录结构 
 
