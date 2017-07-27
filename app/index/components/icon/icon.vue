@@ -1,6 +1,7 @@
 <template>
     <span style="display: inline-block">
-        <span :class='[iconCss.iconfont, iconCss[iconname]]'></span>
+        <!--<span :class='[iconCss.iconfont, iconCss[iconname]]'></span>-->
+        <span :class='iconCss.iconfont'>&#xe71a;</span>
     </span>
 </template>
 <script>

@@ -52,7 +52,6 @@ const router = new VueRouter({ routes });
 
 //路由拦截
 router.beforeEach((to, from, next) => {
-  if (from.path != '/') {
     if (to.matched.some(req => req.meta.requireAuth)) {
       if (Util.getCookie('username')) {
         next()
@@ -60,7 +59,6 @@ router.beforeEach((to, from, next) => {
       else {
         console.log('没有登录')
         store.dispatch('setTip', { msg:'登录失效，请重新登录',type: 'err' })
-        // alert('身份验证失败，请重新登录')
         next({
           path: '/login',
           // query: {redirect : to.fullPath}
@@ -69,9 +67,6 @@ router.beforeEach((to, from, next) => {
     } else {
       next()
     }
-  } else {
-    next()
-  }
 })
 
 

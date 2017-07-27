@@ -18,7 +18,7 @@ const LeftSiderbar  = resolve => require(['../portal/leftSiderBar'], resolve)
 const routes = [
   {
     path: '/',
-    // redirect:'/personalmes',
+    meta:{requireAuth: true},
     component: LeftSiderbar,
     children:[
               {
