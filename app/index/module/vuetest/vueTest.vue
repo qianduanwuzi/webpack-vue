@@ -34,11 +34,11 @@
                                     </template>
                                 </two>-->
     
-        <!--<button @click="click(1)">nav1</button>
+        <button @click="click(1)">nav1</button>
                     <button @click="click(2)">nav2</button>
                     <keep-alive>
                         <component :is="currentView"></component>
-                    </keep-alive>-->
+                    </keep-alive>
     
         <span>{{mes | upcase}}</span>
     
@@ -52,6 +52,10 @@
         <div v-html="html"></div>
     
         <div @click="testTip()">测试tip</div>
+
+        <div>
+            <two ref="two"></two>
+        </div>
     </div>
 </template>
 
@@ -103,6 +107,8 @@ export default {
     //     alert('4')
     // },
     mounted: function () {
+        console.log(this.tests)
+        // console.log(nav1)
         // console.log(this.myMethod(this.age))
         // 
         // this.$set(this.datalist, 1, 10)
@@ -116,11 +122,13 @@ export default {
     },
     methods: {
         testTip() {
+            // this.$refs.two.test();
+            console.log(this.$refs.two)
             this.$store.dispatch('setTip', { msg:'success' })
         },
         click(i) {
-            if (i == 1) this.currentView = nav1
-            if (i == 2) this.currentView = nav2
+            if (i == 1) this.currentView = one
+            if (i == 2) this.currentView = two
         }
 
         // clickbt(test) {

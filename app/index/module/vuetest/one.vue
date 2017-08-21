@@ -15,7 +15,7 @@ export default {
         testC: [String, Number],
         testB: {
             type: String,
-            required: true
+            // required: true
         }
     },
     data() {
