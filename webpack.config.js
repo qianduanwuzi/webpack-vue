@@ -7,15 +7,16 @@ module.exports = {
   devtool:'eval-source-map',
   // entry:['webpack-hot-middleware/client', path.resolve(__dirname, './app/index/index.js')],
   entry:{
-        app:[path.resolve(__dirname, './app/index/index.js')],
+        app: './app/index/index.js',
         vendor:["jquery"],  // 第三方只引入jq
   },
   output:{
-    path: path.join( __dirname,"build"),
-    // publicPath: '',
+    path: path.resolve( __dirname,"./build"),
+    publicPath: '/',
     // filename: '/js/[name].[hash].js',
-    filename: '[name].js',
-    chunkFilename: '[name].[chunkhash].js'
+    filename: '[name].[hash].js',
+    // chunkFilename: '[name].[chunkhash].js',
+    // crossOriginLoading: false
   },
   resolve: { //当webpack试图去加载模块的时候，它默认是查找以 .js 结尾的文件的，它并不知道 .vue 结尾的文件是什么鬼玩意儿，所以我们要在配置文件中告诉webpack，遇到 .vue 结尾的也要去加载，
     extensions: ['', '.js', '.vue'],

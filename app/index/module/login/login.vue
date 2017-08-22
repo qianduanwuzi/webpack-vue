@@ -1,5 +1,7 @@
 <template>
     <div :class="css.loginBox">
+    <!--<div :class="css.parallaxWindow" data-parallax="scroll" data-image-src="/bg.jpg">-->
+
         <div :class="css.loginInBox">
             <div :class="css.line">
                 <label :class="css.label">用户名：</label>
@@ -14,7 +16,6 @@
                 <input type="checkbox" v-model="checked">
                 <label for="">记住密码</label>
             </div>
-            <!--<button @click="login" name="登录" :class="css.login">登录</button>-->
             <Btn name="登录" :widths="168" :heights="30" style="margin-left:87px" type="login" :data="datas" :arr="arrs"></Btn>
         </div>
     </div>
@@ -45,6 +46,7 @@ export default {
         })
     },
     mounted: function () {
+            // <!--<button @click="login" name="登录" :class="css.login">登录</button>-->
         console.log('123123')
         this.setInfo();
     },

@@ -29,6 +29,9 @@ app.use(webpackDevMiddleware(compiler, {
   publicPath: webpackConfig.output.publicPath // 大部分情况下和 `output.publicPath`相同
 }));
 
+app.use(express.static(`${__dirname}/static`))
+
+
 app.listen(9966, function () {
   console.log("Listening on port 9966!");
 });
