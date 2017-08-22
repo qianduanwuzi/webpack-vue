@@ -4,11 +4,16 @@ var HtmlWebpackPlugin = require('html-webpack-plugin')
 var ExtractTextPlugin = require("extract-text-webpack-plugin")
 
 module.exports = {
-  devtool:'eval-source-map',
+  // devtool:'eval-source-map',
   // entry:['webpack-hot-middleware/client', path.resolve(__dirname, './app/index/index.js')],
   entry:{
+<<<<<<< HEAD
         app: './app/index/index.js',
         vendor:["jquery"],  // 第三方只引入jq
+=======
+        app:[path.resolve(__dirname, './app/index/index.js')],
+        vendor:["jquery","vue","vuex","vue-router"],  // 第三方只引入jq
+>>>>>>> c92174aad404ce24f05ae03b9ad41a69eb2926ec
   },
   output:{
     path: path.resolve( __dirname,"./build"),

@@ -1,9 +1,13 @@
 <template>
-    <ul>
-        <slot name="item" v-for="item in items" :text="item.text">
-            <!-- 这里写入备用内容 -->
-        </slot>
-    </ul>
+    <div>
+        this is two
+        <ul>
+            <slot name="item" v-for="item in items" :text="item.text">
+                <!-- 这里写入备用内容 -->
+            </slot>
+        </ul>
+    </div>
+
 </template>
 
 <script>
@@ -12,12 +16,13 @@ export default {
         items:{
             type: Array,
             default: function(){
-                return []
+                return ['props1']
             }
         }
     },
     data() {
         return {
+            data1: 1
         }
     },
     computed: {
@@ -29,7 +34,9 @@ export default {
 
     },
     methods: {
-
+        test(){
+            alert('123')
+        }
     },
     components: {}
 }

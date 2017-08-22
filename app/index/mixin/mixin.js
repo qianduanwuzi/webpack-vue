@@ -1,4 +1,10 @@
 var myMixin = {
+    props:{
+         tests: {
+            default: '123',
+            Type: String
+        },
+    },
     data() {
         return {
             mx: 'mixnwenben'
