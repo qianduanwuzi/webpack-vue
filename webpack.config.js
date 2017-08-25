@@ -1,22 +1,18 @@
 var path = require('path')
 var webpack = require('webpack')
-var HtmlWebpackPlugin = require('html-webpack-plugin') 
+var HtmlWebpackPlugin = require('html-webpack-plugin')
+var ChunkManifestPlugin = require("chunk-manifest-webpack-plugin");
 var ExtractTextPlugin = require("extract-text-webpack-plugin")
 
 module.exports = {
   // devtool:'eval-source-map',
   // entry:['webpack-hot-middleware/client', path.resolve(__dirname, './app/index/index.js')],
-  entry:{
-<<<<<<< HEAD
-        app: './app/index/index.js',
-        vendor:["jquery"],  // 第三方只引入jq
-=======
-        app:[path.resolve(__dirname, './app/index/index.js')],
-        vendor:["jquery","vue","vuex","vue-router"],  // 第三方只引入jq
->>>>>>> c92174aad404ce24f05ae03b9ad41a69eb2926ec
+  entry: {
+    app: [path.resolve(__dirname, './app/index/index.js')],
+    vendor: ["jquery", "vue", "vuex", "vue-router"],  // 第三方只引入jq
   },
-  output:{
-    path: path.resolve( __dirname,"./build"),
+  output: {
+    path: path.resolve(__dirname, "./build"),
     publicPath: '/',
     // filename: '/js/[name].[hash].js',
     filename: '[name].[hash].js',
@@ -27,38 +23,38 @@ module.exports = {
     extensions: ['', '.js', '.vue'],
     // root: path.resolve("./app"), //处理根目录
     alias: {
-      'vue': 'vue/dist/vue.js'
+      // 'vue': 'vue/dist/vue.js'
     }
   },
-  externals: {
-    'AMap': 'AMap'
-  },
-  module:{
-    loaders:[
-          //使用vue-loader 加载 .vue 结尾的文件
-          {
-            test: /\.vue$/, 
-            loader: 'vue' 
-          },
-          {
-            test: /\.js$/,
-            loader: 'babel?presets=es2015',
-            exclude: /node_modules/ //忽略此文件夹，加快编译速度
-          },
-          {
-            test: /\.json$/,
-            loader: 'json'
-          },
-          {
-            test: /\.(png|jpg)$/,
-            exclude: /^node_modules$/,
-            loader: 'url?limit=2000&name=[name].[ext]' //注意后面那个limit的参数，当你图片大小小于这个限制的时候，会自动启用base64编码图片
-          },
-          {
-            test: /\.css?$/,
-            loader: ExtractTextPlugin.extract("vue-style-loader", "css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]") // 处理css
-          }
-    ] 
+  // externals: {
+  //   'AMap': 'AMap'
+  // },
+  module: {
+    loaders: [
+      //使用vue-loader 加载 .vue 结尾的文件
+      {
+        test: /\.vue$/,
+        loader: 'vue'
+      },
+      {
+        test: /\.js$/,
+        loader: 'babel?presets=es2015',
+        exclude: /node_modules/ //忽略此文件夹，加快编译速度
+      },
+      {
+        test: /\.json$/,
+        loader: 'json'
+      },
+      {
+        test: /\.(png|jpg)$/,
+        exclude: /node_modules$/,
+        loader: 'url?limit=2000&name=[name].[ext]' //注意后面那个limit的参数，当你图片大小小于这个限制的时候，会自动启用base64编码图片
+      },
+      {
+        test: /\.css?$/,
+        loader: ExtractTextPlugin.extract("vue-style-loader", "css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]") // 处理css
+      }
+    ]
   },
   vue: {
     loaders: {
@@ -66,28 +62,35 @@ module.exports = {
       less: ExtractTextPlugin.extract("css!less")
     }
   },
-  plugins:[
-    new webpack.ProvidePlugin({ //页面可使用下列jquery属性
-        $ : "jquery",
-        jQuery : "jquery",
-        "window.jQuery" : "jquery"
-    }),
+  plugins: [
+    // new webpack.ProvidePlugin({ //页面可使用下列jquery属性
+    //     $ : "jquery",
+    //     jQuery : "jquery",
+    //     "window.jQuery" : "jquery"
+    // }),
     new HtmlWebpackPlugin({
-        filename: 'index.html',
-        // filename: 'app/index/index.html',
-        template: './app/index/index.html',
-        inject: true
+      filename: 'index.html',
+      // filename: 'app/index/index.html',
+      template: './app/index/index.html',
+      inject: true
     }),
-    new webpack.optimize.CommonsChunkPlugin({ name: 'vendor', filename: 'vendor.js' }),   //把入口文件里面的vendor(第三方依赖)数组打包成vendors.js，然后在index.html引入
+    new webpack.optimize.CommonsChunkPlugin({
+      name: ["vendor", "manifest"], //把入口文件里面的vendor(第三方依赖)数组打包成vendors.js，然后在index.html引入
+      minChunks: Infinity,
+    }),
     //压缩代码
     new webpack.optimize.UglifyJsPlugin({
-        compress: {
-            warnings: false
-        }
-    }), 
-     new webpack.optimize.OccurenceOrderPlugin(),
-     new webpack.HotModuleReplacementPlugin(),
-     new ExtractTextPlugin("[name]-[chunkhash].css"),	//单独使用style标签加载css并设置其路径
+      compress: {
+        warnings: false
+      }
+    }),
+    new webpack.optimize.OccurenceOrderPlugin(),
+    new webpack.HotModuleReplacementPlugin(),
+    new ExtractTextPlugin("[name]-[chunkhash].css"),	//单独使用style标签加载css并设置其路径
+    new ChunkManifestPlugin({
+      filename: "chunk-manifest.json",
+      manifestVariable: "webpackManifest"
+    })
     //  new webpack.DefinePlugin({
     //         'process.env.NODE_ENV': '"development"'
     //     }),

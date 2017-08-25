@@ -24,8 +24,8 @@ export default {
     },
     methods: {
         showChildren() {
-            // console.log(this.$refs.a1)
-            // console.log(this.$refs.b1)
+            // console.log('1', this.$refs.a1)
+            // console.log('2', this.$refs.b1)
             // alert(this.$refs.a1.name)
             // alert(this.$refs.b1.name)
             let arr = this.$children;
