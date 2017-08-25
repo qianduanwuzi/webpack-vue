@@ -2,7 +2,8 @@
     <div>
         this is two
         <ul>
-            <slot name="item" v-for="(item, index) in items" :text="item.text" :key="index">
+            <slot name="item" v-for="(item, index) in items" :text="item.text">
+                this is fault
                 <!-- 这里写入备用内容 -->
             </slot>
         </ul>
