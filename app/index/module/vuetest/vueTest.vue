@@ -40,7 +40,7 @@
                         <component :is="currentView"></component>
                     </keep-alive>
     
-        <span>{{mes | upcase}}</span>
+        <span class="mes">{{mes | upcase}}</span>
     
         <div v-showvalue="mes" v-bg="blue"></div>
     
@@ -56,15 +56,17 @@
         <div>
             <two ref="two"></two>
         </div>
+        <three></three>
     </div>
 </template>
 
 <script>
+var three = require('./three')
 import one from './one.vue';
 import two from './two.vue';
 import myMixin from '../../mixin/mixin.js';
-var nav1 = { template: '<p>this is nav1</p>' };
-var nav2 = { template: '<p>this is nav2</p>' };
+var nav1 =   '<p>this is nav1</p>' ;
+var nav2 =  '<p>this is nav2</p>' ;
 // Vue.component('temp', {
 //     template: '<div>{{ message }}</div>',
 //     data: function(){
@@ -107,6 +109,8 @@ export default {
     //     alert('4')
     // },
     mounted: function () {
+        console.log($('.mes'))
+        console.log('111',module)
         console.log(this.tests)
         // console.log(nav1)
         // console.log(this.myMethod(this.age))
@@ -162,7 +166,7 @@ export default {
         //     console.log(this.selected.num)
         // }
     },
-    components: { one, two }
+    components: { one, two, three }
 }
 </script>
 

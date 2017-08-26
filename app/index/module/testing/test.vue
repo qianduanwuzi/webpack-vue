@@ -16,7 +16,7 @@
     <b>draganddrop/拖动，支持上下移动</b>
     <div style="margin-top: 100px"></div>
     <div style="float: left">
-      <div v-for="one in data" :key="one" draggable="true" @dragstart.self="ddrag($event)" style=" height: 30px; width: 100px;background-color: rgb(0,187,187);text-align:center;margin-top: 20px;color: white;font-size: 20px">
+      <div v-for="(one, ind) in data" :key="ind" draggable="true" @dragstart.self="ddrag($event)" style=" height: 30px; width: 100px;background-color: rgb(0,187,187);text-align:center;margin-top: 20px;color: white;font-size: 20px">
         {{one}}
       </div>
     </div>

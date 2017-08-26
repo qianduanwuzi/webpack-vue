@@ -1,7 +1,7 @@
 <template>
     <div style="height:100%">
         <div :class="css.menusBox">
-            <div v-for="(one,index) in menus" @click="clickHandler(index)" :key="one">
+            <div v-for="(one,index) in menus" @click="clickHandler(index)" :key="index">
                     <router-link :to='one.url' :class="[one.show ? css.highlight : '',css.everyBar]"><icon :iconname="one.iconname"></icon><span :class="css.iconname">{{one.name}}</span></router-link>
             </div>
         </div>

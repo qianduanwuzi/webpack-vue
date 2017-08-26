@@ -3,7 +3,7 @@
         this is two
         <ul>
             <slot name="item" v-for="(item, index) in items" :text="item.text">
-                this is fault
+                this is fault...
                 <!-- 这里写入备用内容 -->
             </slot>
         </ul>

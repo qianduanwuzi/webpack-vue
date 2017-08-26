@@ -19,17 +19,28 @@
 
 var express = require("express");
 var webpackDevMiddleware = require("webpack-dev-middleware");
+var webpackHotMiddleware = require("webpack-hot-middleware");
 var webpack = require("webpack");
 var webpackConfig = require("./webpack.config.js");
 
 var app = express();
 var compiler = webpack(webpackConfig);
 
+app.use(express.static(`${__dirname}/static`))
 app.use(webpackDevMiddleware(compiler, {
-  publicPath: webpackConfig.output.publicPath // 大部分情况下和 `output.publicPath`相同
+  publicPath: webpackConfig.output.publicPath, // 大部分情况下和 `output.publicPath`相同
+  // noInfo: true,
+  quiet: false,
 }));
 
-app.use(express.static(`${__dirname}/static`))
+app.use(webpackHotMiddleware(compiler, {
+  log: false,
+  path: "/__webpack_hmr",
+  heartbeat: 2000
+}));
+
+// app.use(webpackHotMiddleware(compiler))
+
 
 
 app.listen(9966, function () {

@@ -10,6 +10,9 @@ import store from './store/index'
 import WZPlugin from '../plugin/plu'
 import * as filters from './filter/index'
 
+
+console.log(module.hot.accept)
+
 //初始化全局组件
 for(let i in components){
   let one = components[i];
