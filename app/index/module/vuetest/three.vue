@@ -19,7 +19,7 @@ export default {
 
     },
     mounted: function () {
-        // alert('this is three')
+        alert('this is three')
     },
     methods: {
       

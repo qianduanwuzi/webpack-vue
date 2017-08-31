@@ -56,12 +56,15 @@
         <div>
             <two ref="two"></two>
         </div>
-        <three></three>
+        <!--<three></three>-->
+
+        <vue-qrcode value="hello,world" :options="{size: 200}"></vue-qrcode>
     </div>
 </template>
 
 <script>
-var three = require('./three')
+require('./three')
+import vueQrcode from 'vue-qrcode'
 import one from './one.vue';
 import two from './two.vue';
 import myMixin from '../../mixin/mixin.js';
@@ -109,6 +112,7 @@ export default {
     //     alert('4')
     // },
     mounted: function () {
+        console.log('115',process.env.NODE_ENV)
         console.log($('.mes'))
         console.log('111',module)
         console.log(this.tests)
@@ -166,7 +170,7 @@ export default {
         //     console.log(this.selected.num)
         // }
     },
-    components: { one, two, three }
+    components: { one, two, vueQrcode }
 }
 </script>
 

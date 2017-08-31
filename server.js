@@ -30,7 +30,7 @@ app.use(express.static(`${__dirname}/static`))
 app.use(webpackDevMiddleware(compiler, {
   publicPath: webpackConfig.output.publicPath, // 大部分情况下和 `output.publicPath`相同
   // noInfo: true,
-  quiet: false,
+  // quiet: false,
 }));
 
 app.use(webpackHotMiddleware(compiler, {

@@ -19,6 +19,10 @@ const config = merge(base, {
                 warnings: false
             }
         }),
+        // 供全局使用当前的环境变量
+        new webpack.DefinePlugin({
+            'process.env.NODE_ENV':JSON.stringify(process.env.NODE_ENV)
+        }),
         // 页面可使用下列jquery属性
         new webpack.ProvidePlugin({
             $: "jquery",

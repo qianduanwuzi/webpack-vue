@@ -11,7 +11,8 @@ import WZPlugin from '../plugin/plu'
 import * as filters from './filter/index'
 
 
-console.log(module.hot.accept)
+// console.log(module.hot.accept)
+console.log(process.env.NODE_ENV)
 
 //初始化全局组件
 for(let i in components){
