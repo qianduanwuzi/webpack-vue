@@ -54,7 +54,7 @@ module.exports = {
       {
         test: /\.(png|jpg)$/,
         exclude: /node_modules$/,
-        loader: 'url?limit=2000&name=[name].[ext]' //注意后面那个limit的参数，当你图片大小小于这个限制的时候，会自动启用base64编码图片
+        loader: 'url?limit=2000&name=[name].[ext]' //limit:当你图片大小小于这个限制的时候，会自动启用base64编码图片，一并打包到输出文件，减少http请求，from memory cache
       },
       {
         test: /\.css?$/,

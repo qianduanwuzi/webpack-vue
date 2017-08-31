@@ -56,6 +56,7 @@
         <div>
             <two ref="two"></two>
         </div>
+        <img src="./test.jpg" alt="">
         <!--<three></three>-->
 
         <vue-qrcode value="hello,world" :options="{size: 200}"></vue-qrcode>
