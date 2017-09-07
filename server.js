@@ -22,6 +22,7 @@ var webpackDevMiddleware = require("webpack-dev-middleware");
 var webpackHotMiddleware = require("webpack-hot-middleware");
 var webpack = require("webpack");
 var webpackConfig = require("./webpack.config.js");
+var test = require('./app/router/test');
 
 var app = express();
 var compiler = webpack(webpackConfig);
@@ -39,9 +40,12 @@ app.use(webpackHotMiddleware(compiler, {
   heartbeat: 2000
 }));
 
+app.use('/test',test);
 // app.use(webpackHotMiddleware(compiler))
 
-
+app.get('/test2', function (req, res) {
+    res.json({a:'1'});
+})
 
 app.listen(9966, function () {
   console.log("Listening on port 9966!");

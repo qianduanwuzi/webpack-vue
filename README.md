@@ -46,18 +46,22 @@ localhost:9966
             |-- module                      // 前端页面
             |-- store                       // use vuex
             |-- index.html                  // 入口html模板 （没放到项目根目录下）
+            |-- index.jade                  // jade模板
             |-- index.js                    // 程序入口文件（有点坑，还没放到app根目录下，请见谅）
         |-- plugin                          // 自定义插件
         |-- portal                          // 门户
             |-- leftSideBar.vue             // 左菜单页
             |-- menu.js                     // 菜单基本信息配置
         |-- router
-            |-- router.js                   // 路由
+            |-- router.js                   // 页面路由
+            |-- test.js                     // 代理api路由
     |-- bootstrap                         //前端响应布局（可忽略）
     |-- .babelrc                         // ES6语法编译配置
+    |-- gitignore                        // git-upload配置
     |-- package.json                     // 项目及工具的依赖配置文件
     |-- README.md                        // 说明
     |-- server.js                        // 服务启动文件
-    |-- webpack.config.js                // webpack配置
+    |-- webpack.base.config.js           // webpack基础配置
+    |-- webpack.config.js                // webpack配置（merge）
 
 

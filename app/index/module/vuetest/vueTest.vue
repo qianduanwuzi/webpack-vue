@@ -70,6 +70,7 @@ import vueQrcode from 'vue-qrcode'
 import one from './one.vue';
 import two from './two.vue';
 import myMixin from '../../mixin/mixin.js';
+import fetch from "../../fetch/index"
 var nav1 =   '<p>this is nav1</p>' ;
 var nav2 =  '<p>this is nav2</p>' ;
 // Vue.component('temp', {
@@ -114,6 +115,8 @@ export default {
     //     alert('4')
     // },
     mounted: function () {
+        fetch.fetchGet("/test2",{});
+        fetch.fetchGet("/test/test1",{});
         console.log('115',process.env.NODE_ENV)
         console.log($('.mes'))
         console.log('111',module)
