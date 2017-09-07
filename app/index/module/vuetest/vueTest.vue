@@ -64,7 +64,8 @@
 </template>
 
 <script>
-require('./three')
+require('./three');
+import util from "common/util"
 import vueQrcode from 'vue-qrcode'
 import one from './one.vue';
 import two from './two.vue';

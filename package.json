@@ -56,6 +56,8 @@
     "babel-preset-stage-2": "^6.24.1",
     "chunk-manifest-webpack-plugin": "^1.1.2",
     "cross-env": "^5.0.5",
+    "jade": "^1.11.0",
+    "jade-loader": "^0.8.0",
     "style-loader": "^0.18.2",
     "transform-runtime": "0.0.0",
     "url-loader": "^0.5.9",

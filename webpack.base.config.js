@@ -29,10 +29,10 @@ module.exports = {
     extensions: ['', '.js', '.vue'],
     // root: path.resolve("./app"), //处理根目录
     alias: {
-      // 'vue': 'vue/dist/vue.js'
+      "common": path.resolve(__dirname, "./app/common")
     }
   },
-  // externals: {
+  // externals: { //不会打包到bundle中，只是在运行中去外部获取扩展包
   //   'AMap': 'AMap'
   // },
   module: {
@@ -50,6 +50,10 @@ module.exports = {
       {
         test: /\.json$/,
         loader: 'json'
+      },
+      {
+        test: /\.jade$/,
+        loader: 'jade'
       },
       {
         test: /\.(png|jpg)$/,

@@ -11,7 +11,8 @@ const config = merge(base, {
         }),
         // 模板
         new HTMLPlugin({
-            template: './app/index/index.html'
+            // template: './app/index/index.html'
+            template: './app/index/index.jade'
         }),
         // 压缩代码
         new webpack.optimize.UglifyJsPlugin({
