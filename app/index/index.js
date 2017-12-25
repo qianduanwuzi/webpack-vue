@@ -9,6 +9,9 @@ import components from '../config/components'
 import store from './store/index'
 import WZPlugin from '../plugin/plu'
 import * as filters from './filter/index'
+import ElementUI from 'element-ui'
+// 忽略element样式（css-loader有问题）
+// import 'element-ui/lib/theme-default/index.css'
 
 
 // console.log(module.hot.accept)
@@ -39,6 +42,7 @@ Object.keys(filters).forEach(key => {
   Vue.filter(key, filters[key])
 })
 
+Vue.use(ElementUI)
 // 使用自定义插件
 Vue.use(WZPlugin, { someOption: true })
 

@@ -63,6 +63,9 @@ const routes = [
               {
                 path: 'reserve12', component: require('../index/module/children/children'), meta:{requireAuth: true}
               },
+                {
+                path: 'xlsx', component: require('../index/module/xlsx/index'), meta:{requireAuth: true}
+              },
              ]
   },
   {

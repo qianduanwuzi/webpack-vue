@@ -21,8 +21,14 @@ export default {
     computed: {
     },
     mounted: function () {
+
     },
     methods: {
+        asyncData(cb) {
+            alert('1')
+            cb && cb()
+            alert('2')
+        },
         showChildren() {
             // console.log('1', this.$refs.a1)
             // console.log('2', this.$refs.b1)

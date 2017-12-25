@@ -83,4 +83,10 @@ module.exports = [
         show:false,
         url:'/reserve12',
     },
+      {
+        name:'xlsx',
+        iconname:'icon-tag',
+        show:false,
+        url:'/xlsx',
+    },
 ]

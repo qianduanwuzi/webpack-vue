@@ -63,7 +63,15 @@ module.exports = {
       {
         test: /\.css?$/,
         loader: ExtractTextPlugin.extract("vue-style-loader", "css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]") // 处理css
-      }
+      },
+      //  {
+      //   test: /\.css$/,
+      //   loader: 'style-loader!css-loader'
+      // },
+         {
+        test: /\.(eot|svg|ttf|woff|woff2)(\?\S*)?$/,
+        loader: 'file-loader'
+      },
     ]
   },
   vue: {

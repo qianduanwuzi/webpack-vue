@@ -47,7 +47,7 @@ export default {
     },
     mounted: function () {
             // <!--<button @click="login" name="登录" :class="css.login">登录</button>-->
-        console.log('123123')
+        // console.log('123123')
         this.setInfo();
     },
     methods: {

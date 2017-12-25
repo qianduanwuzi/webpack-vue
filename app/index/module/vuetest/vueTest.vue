@@ -59,14 +59,14 @@
         <img src="./test.jpg" alt="">
         <!--<three></three>-->
 
-        <vue-qrcode value="hello,world" :options="{size: 200}"></vue-qrcode>
+        <!--<vue-qrcode value="hello,world" :options="{size: 200}"></vue-qrcode>-->
     </div>
 </template>
 
 <script>
 require('./three');
 import util from "common/util"
-import vueQrcode from 'vue-qrcode'
+// import vueQrcode from 'vue-qrcode'
 import one from './one.vue';
 import two from './two.vue';
 import myMixin from '../../mixin/mixin.js';
@@ -175,7 +175,7 @@ export default {
         //     console.log(this.selected.num)
         // }
     },
-    components: { one, two, vueQrcode }
+    components: { one, two, }
 }
 </script>
 
