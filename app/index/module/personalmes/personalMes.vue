@@ -10,6 +10,7 @@
 <script>
 import JzezMap from '../../../common/jzezMap'
 import Util from '../../../common/util'
+import { mapGetters } from 'vuex';
 export default {
   data() {
     return {
@@ -24,6 +25,9 @@ export default {
         }
     },
   computed: {
+      ...mapGetters({
+            getTipInfo: 'getTip'
+        })
   },
   mounted: function () {
     console.log(this)
@@ -74,7 +78,12 @@ export default {
 
   },
   components: {
-  }
+  },
+   watch: {
+        "getTipInfo.timestamp": function () {
+            alert('---')
+        }
+    }
 }
 </script>
 

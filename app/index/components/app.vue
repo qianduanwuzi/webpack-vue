@@ -9,6 +9,7 @@
         <!--<router-view></router-view>-->
         <!--</div>-->
         <Tip></Tip>
+        <leftsiderbar></leftsiderbar>
     </div>
 </template>
 <script>

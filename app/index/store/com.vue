@@ -1,5 +1,5 @@
 <template>
-    <div> </div>
+    <div>{{getApp}} </div>
 </template>
 
 <script>
@@ -24,7 +24,8 @@ export default {
     },
     mounted: function () {
         // console.log(this.datas)
-        // console.log('19--->',this.$store.getters.getApp);
+        console.log(this.$store)
+        console.log('19--->',this.$store.getters.getApp);
     },
     methods: {
      

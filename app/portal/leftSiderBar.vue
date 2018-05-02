@@ -15,6 +15,7 @@
 import css from './leftsiderbar.css';
 import menu from './menu';
 import icon from '../index/components/icon/icon';
+import { mapGetters } from 'vuex';
 export default {
   data () {
         return {
@@ -23,6 +24,9 @@ export default {
         }
   },
   computed:{
+      ...mapGetters({
+            getTipInfo: 'getTip'
+        })
   },
   mounted:function(){
       //刷新
@@ -44,7 +48,11 @@ export default {
         // })
       },
   },
-  components: {icon}
+  components: {icon},
+  watch: {
+        "getTipInfo.timestamp": function () {
+        }
+    }
 }
 </script>
 

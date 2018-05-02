@@ -25,7 +25,7 @@ export default {
     },
     mounted: function() {
         // this.data = 'new'
-        this.$store.dispatch('setApp', 'wuzi')
+        this.$store.dispatch('setApp', 'chennan')
     },
     methods: {
 

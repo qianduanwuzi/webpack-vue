@@ -5,7 +5,7 @@
 
 const testStore = {
     state:{
-        platform: ''
+        platform: '123'
     },
     //处理异步
     actions: {

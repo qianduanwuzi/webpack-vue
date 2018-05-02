@@ -36,9 +36,9 @@
     
         <button @click="click(1)">nav1</button>
                     <button @click="click(2)">nav2</button>
-                    <keep-alive>
+                    <!-- <keep-alive>
                         <component :is="currentView"></component>
-                    </keep-alive>
+                    </keep-alive> -->
     
         <span class="mes">{{mes | upcase}}</span>
     
@@ -60,6 +60,8 @@
         <!--<three></three>-->
 
         <!--<vue-qrcode value="hello,world" :options="{size: 200}"></vue-qrcode>-->
+        <hello-world v-model="vvv"></hello-world> 
+        {{vvv}}
     </div>
 </template>
 
@@ -71,8 +73,9 @@ import one from './one.vue';
 import two from './two.vue';
 import myMixin from '../../mixin/mixin.js';
 import fetch from "../../fetch/index"
-var nav1 =   '<p>this is nav1</p>' ;
-var nav2 =  '<p>this is nav2</p>' ;
+import Vue from 'vue';
+// var nav1 =   '<p>this is nav1</p>' ;
+// var nav2 =  '<p>this is nav2</p>' ;
 // Vue.component('temp', {
 //     template: '<div>{{ message }}</div>',
 //     data: function(){
@@ -81,19 +84,33 @@ var nav2 =  '<p>this is nav2</p>' ;
 //         }
 //     }
 // })
+Vue.component('hello-world', {
+  data: () => ({
+    text: 'Hello World!'
+  }),
+  render () {
+    return (
+      <div>
+        <input type="text" value="" v-model={this.text} />
+        {this.text}
+      </div>
+    )
+  }
+})
 export default {
     mixins: [myMixin],
     props: {
     },
     data() {
         return {
+            vvv: 1,
             datalist: [1, 2, 3, 4, 5],
             inputdata: '',
             selected: '',
             test: 'dAC',
             total: 1,
             items: [{ text: 'a' }, { text: 'b' }, { text: 'c' }],
-            currentView: nav1,
+            // currentView: nav1,
             mes: 'old mes',
             age: 20,
             html: 'lala<p>this is a html text</p>lala'
